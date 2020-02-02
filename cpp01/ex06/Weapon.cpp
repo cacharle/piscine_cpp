@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/02 12:43:03 by cacharle          #+#    #+#             */
-/*   Updated: 2020/02/02 12:43:06 by cacharle         ###   ########.fr       */
+/*   Created: 2020/02/02 16:36:23 by cacharle          #+#    #+#             */
+/*   Updated: 2020/02/02 16:56:48 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Weapon.hpp"
 
-int main()
+Weapon::Weapon(std::string type)
 {
-	std::string s = "HI THIS IS BRAIN";
-	std::string &ref_s = s;
-	std::string *ptr_s = &s;
+	this->type = type;
+}
 
-	std::cout << ref_s << std::endl;
-	std::cout << *ptr_s << std::endl;
-	return 0;
+const std::string& Weapon::getType()
+{
+	return &type;
+}
+
+void Weapon::setType(const std::string& type)
+{
+	this->type = type;
 }

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/02 12:43:03 by cacharle          #+#    #+#             */
-/*   Updated: 2020/02/02 12:43:06 by cacharle         ###   ########.fr       */
+/*   Created: 2020/02/02 12:52:39 by cacharle          #+#    #+#             */
+/*   Updated: 2020/02/02 13:08:46 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-int main()
+# include "Brain.hpp"
+
+class Human
 {
-	std::string s = "HI THIS IS BRAIN";
-	std::string &ref_s = s;
-	std::string *ptr_s = &s;
+	private:
+		const Brain brain;
 
-	std::cout << ref_s << std::endl;
-	std::cout << *ptr_s << std::endl;
-	return 0;
-}
+	public:
+		std::string	identify();
+		const Brain& getBrain() ;
+};
+
+#endif

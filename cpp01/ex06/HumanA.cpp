@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/02 12:43:03 by cacharle          #+#    #+#             */
-/*   Updated: 2020/02/02 12:43:06 by cacharle         ###   ########.fr       */
+/*   Created: 2020/02/02 16:44:03 by cacharle          #+#    #+#             */
+/*   Updated: 2020/02/02 16:54:07 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "HumanA.hpp"
 
-int main()
+HumanA::HumanA(std::string name, Weapon weapon)
 {
-	std::string s = "HI THIS IS BRAIN";
-	std::string &ref_s = s;
-	std::string *ptr_s = &s;
+	this->name = name;
+	this->weapon = weapon;
+}
 
-	std::cout << ref_s << std::endl;
-	std::cout << *ptr_s << std::endl;
-	return 0;
+void HumanA::attack()
+{
+	std::cout << name << " attack with his " << weapon.getType();
 }

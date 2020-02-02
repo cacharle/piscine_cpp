@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/02 12:43:03 by cacharle          #+#    #+#             */
-/*   Updated: 2020/02/02 12:43:06 by cacharle         ###   ########.fr       */
+/*   Created: 2020/02/02 12:47:22 by cacharle          #+#    #+#             */
+/*   Updated: 2020/02/02 16:28:27 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main()
+# include <string>
+# include <sstream>
+# include <iostream>
+
+class Brain
 {
-	std::string s = "HI THIS IS BRAIN";
-	std::string &ref_s = s;
-	std::string *ptr_s = &s;
+	public:
+	std::string identify() const;
+};
 
-	std::cout << ref_s << std::endl;
-	std::cout << *ptr_s << std::endl;
-	return 0;
-}
+#endif

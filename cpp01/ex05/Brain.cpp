@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/02 12:43:03 by cacharle          #+#    #+#             */
-/*   Updated: 2020/02/02 12:43:06 by cacharle         ###   ########.fr       */
+/*   Created: 2020/02/02 12:47:24 by cacharle          #+#    #+#             */
+/*   Updated: 2020/02/02 16:32:58 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Brain.hpp"
 
-int main()
+std::string Brain::identify() const
 {
-	std::string s = "HI THIS IS BRAIN";
-	std::string &ref_s = s;
-	std::string *ptr_s = &s;
-
-	std::cout << ref_s << std::endl;
-	std::cout << *ptr_s << std::endl;
-	return 0;
+	std::stringstream ss;
+	ss << this;
+	return "0x" + ss.str();
 }
