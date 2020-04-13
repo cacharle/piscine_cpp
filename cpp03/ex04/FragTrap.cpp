@@ -6,37 +6,33 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:20:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/04/13 15:18:42 by charles          ###   ########.fr       */
+/*   Updated: 2020/04/13 15:46:59 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap():
-    m_hitPoints(100),
-    m_maxHitPoints(100),
-    m_energyPoints(100),
-    m_maxEnergyPoints(100),
-    m_level(1),
-    m_name(""),
-    m_meleeAttackDamage(30),
-    m_rangedAttackDamage(20),
-    m_armorDamageReduction(5)
+    ClapTrap()
 {
+    m_prefix = "FR4G-TP ";
+    m_energyPoints = 100;
+    m_maxEnergyPoints = 100;
+    m_meleeAttackDamage = 30;
+    m_rangedAttackDamage = 20;
+    m_armorDamageReduction = 5;
 	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name):
-    m_hitPoints(100),
-    m_maxHitPoints(100),
-    m_energyPoints(100),
-    m_maxEnergyPoints(100),
-    m_level(1),
-    m_name(name),
-    m_meleeAttackDamage(30),
-    m_rangedAttackDamage(20),
-    m_armorDamageReduction(5)
+    ClapTrap(name)
 {
+    m_prefix = "FR4G-TP ";
+    m_energyPoints = 100;
+    m_maxEnergyPoints = 100;
+    m_meleeAttackDamage = 30;
+    m_rangedAttackDamage = 20;
+    m_armorDamageReduction = 5;
 	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
@@ -59,47 +55,7 @@ void FragTrap::operator=(FragTrap const& other)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FR4G-TP Delete " << m_name << ": your gaming references still suck" << std::endl;
-}
-
-void FragTrap::rangedAttack(std::string const& target) const
-{
-	std::cout << "FR4G-TP " << m_name
-              << " attacks " << target
-			  << " at range, causing " << m_rangedAttackDamage
-              << " points of damage!" << std::endl;
-}
-
-void FragTrap::meleeAttack(std::string const& target) const
-{
-	std::cout << "FR4G-TP " << m_name
-              << " attacks " << target
-			  << " in melee mode causing " << m_meleeAttackDamage
-              << " points of damage!" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount)
-{
-    if (amount < m_armorDamageReduction)
-        amount = 0;
-    else
-        amount -= m_armorDamageReduction;
-	if (amount > m_hitPoints)
-        amount = m_hitPoints;
-	m_hitPoints -= amount;
-	std::cout << "FR4G-TP " << m_name
-              << " takes " << amount
-              << " damage" << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount)
-{
-    if (amount + m_hitPoints > m_maxHitPoints)
-        amount = m_maxHitPoints - m_hitPoints;
-    m_hitPoints += amount;
-	std::cout << "FR4G-TP " << m_name
-              << " gained " << amount
-              << " hit points" << std::endl;
+	std::cout << m_prefix << "Delete "<< m_name << ": your gaming references still suck" << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const& target)

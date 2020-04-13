@@ -6,37 +6,33 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:15:03 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 14:31:23 by charles          ###   ########.fr       */
+/*   Updated: 2020/04/13 15:46:56 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap():
-    m_hitPoints(100),
-    m_maxHitPoints(100),
-    m_energyPoints(50),
-    m_maxEnergyPoints(50),
-    m_level(1),
-    m_name(""),
-    m_meleeAttackDamage(20),
-    m_rangedAttackDamage(15),
-    m_armorDamageReduction(3)
+    ClapTrap()
 {
+    m_prefix = "SC4V-TP ";
+    m_energyPoints = 50;
+    m_maxEnergyPoints = 50;
+    m_meleeAttackDamage = 20;
+    m_rangedAttackDamage = 15;
+    m_armorDamageReduction = 3;
 	std::cout << "New " << m_name << ": your gaming references suck" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name):
-    m_hitPoints(100),
-    m_maxHitPoints(100),
-    m_energyPoints(50),
-    m_maxEnergyPoints(50),
-    m_level(1),
-    m_name(name),
-    m_meleeAttackDamage(20),
-    m_rangedAttackDamage(15),
-    m_armorDamageReduction(3)
+    ClapTrap(name)
 {
+    m_prefix = "SC4V-TP ";
+    m_energyPoints = 50;
+    m_maxEnergyPoints = 50;
+    m_meleeAttackDamage = 20;
+    m_rangedAttackDamage = 15;
+    m_armorDamageReduction = 3;
 	std::cout << "SC4V-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
@@ -60,45 +56,6 @@ void ScavTrap::operator=(ScavTrap const& other)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "SC4V-TP Delete " << m_name << ": your gaming references still suck" << std::endl;
-}
-
-void ScavTrap::rangedAttack(std::string const& target) const
-{
-	std::cout << "SC4V-TP " << m_name
-              << " attacks " << target
-			  << " at range, causing " << m_rangedAttackDamage
-              << " points of damage!" << std::endl;
-}
-
-void ScavTrap::meleeAttack(std::string const& target) const
-{
-	std::cout << "SC4V-TP " << m_name
-              << " attacks " << target
-			  << " in melee mode causing " << m_meleeAttackDamage
-              << " points of damage!" << std::endl;
-}
-
-void ScavTrap::takeDamage(unsigned int amount)
-{
-    amount -= m_armorDamageReduction;
-    if (amount < 0)
-        amount = 0;
-	if (amount > m_hitPoints)
-        amount = m_hitPoints;
-	m_hitPoints -= amount;
-	std::cout << "SC4V-TP " << m_name
-              << " takes " << amount
-              << " damage" << std::endl;
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-    if (amount + m_hitPoints > m_maxHitPoints)
-        amount = m_maxHitPoints - m_hitPoints;
-    m_hitPoints += amount;
-	std::cout << "SC4V-TP " << m_name
-              << " gained " << amount
-              << " hit points" << std::endl;
 }
 
 void ScavTrap::challengeNewcomer(std::string const& target)

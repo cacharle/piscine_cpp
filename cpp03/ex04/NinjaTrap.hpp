@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:31:24 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 17:45:16 by charles          ###   ########.fr       */
+/*   Updated: 2020/04/13 18:41:44 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
 public:
 	NinjaTrap();
