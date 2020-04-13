@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:45:18 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 11:58:37 by charles          ###   ########.fr       */
+/*   Updated: 2020/04/13 13:02:27 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,17 @@ void Fixed::operator=(Fixed const& other)
     m_value = other.getRawBits();
 }
 
+Fixed::Fixed(int from)
+{
+    std::cout << " constructor called" << std::endl;
+    m_value = from << m_fractionalBits;
+}
+
+Fixed::Fixed(float from)
+{
+    m_value = 0;
+}
+
 int Fixed::getRawBits() const
 {
     std::cout << "getRawBits member function called" << std::endl;
@@ -45,4 +56,30 @@ void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
     m_value = raw;
+}
+
+float Fixed::toFloat() const
+{
+    return 0;
+}
+
+int Fixed::toInt() const
+{
+    return m_value >> m_fractionalBits;
+}
+
+int Fixed::getFractionalBits()
+{
+    return m_fractionalBits;
+}
+
+std::ostream& operator<<(std::ostream& out, Fixed const& f)
+{
+    int dec_part;
+    int shift_size;
+
+    shift_size = (sizeof(int) * 8) - Fixed::getFractionalBits();
+    dec_part = f.getRawBits() << shift_size >> shift_size;
+    out << f.toInt() << '.' << dec_part;
+    return out;
 }
