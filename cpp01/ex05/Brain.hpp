@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 12:47:22 by cacharle          #+#    #+#             */
-/*   Updated: 2020/02/02 16:28:27 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/04/13 10:04:01 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Brain
 {
-	public:
+public:
 	std::string identify() const;
 };
 

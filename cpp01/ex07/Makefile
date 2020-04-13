@@ -6,12 +6,12 @@
 #    By: cacharle <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/02 17:05:31 by cacharle          #+#    #+#              #
-#    Updated: 2020/02/02 17:58:08 by cacharle         ###   ########.fr        #
+#    Updated: 2020/04/13 10:32:03 by charles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = clang++
-CXXFLAGS= -Wall -Wextra #-Werror
+CXXFLAGS= -Wall -Wextra -Werror
 
 SRC = $(shell find . -type f -name "*.cpp")
 OBJ = $(SRC:.cpp=.o)

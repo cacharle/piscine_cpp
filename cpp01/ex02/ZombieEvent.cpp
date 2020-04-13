@@ -1,17 +1,28 @@
-#include <cstdlib>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 09:41:33 by charles           #+#    #+#             */
+/*   Updated: 2020/04/13 09:49:36 by charles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ZombieEvent.hpp"
 
-void ZombieEvent::setZombieType(std::string type)
+void ZombieEvent::setZombieType(std::string storedType)
 {
-	stored_type = type;
+	m_storedType = storedType;
 }
 
-Zombie *ZombieEvent::newZombie(std::string name)
+Zombie* ZombieEvent::newZombie(std::string name)
 {
-	return new Zombie(name, stored_type);
+	return new Zombie(name, m_storedType);
 }
 
-Zombie *ZombieEvent::randomChump()
+Zombie* ZombieEvent::randomChump()
 {
 	std::string pool[10] = {
 		"Jordan",
@@ -25,5 +36,5 @@ Zombie *ZombieEvent::randomChump()
 		"yo",
 		"rideaux"
 	};
-	return new Zombie(pool[rand() % 10], stored_type);
+	return new Zombie(pool[rand() % 10], m_storedType);
 }
