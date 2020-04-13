@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 09:06:23 by charles           #+#    #+#             */
+/*   Updated: 2020/04/13 09:06:39 by charles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONE_BOOK_HPP
 # define PHONE_BOOK_HPP
 
@@ -10,11 +22,16 @@ class PhoneBook
 {
 public:
 	PhoneBook();
-	bool add(Contact contact);
+	void add(Contact contact);
 	Contact* search(std::string needle);
+    size_t getSize() const;
+    Contact const &get(int index) const;
+
 private:
-	Contact contacts[CONTACTS_SIZE];
-	int contacts_len;
+	Contact m_contacts[CONTACTS_SIZE];
+	int m_size;
 };
 
-#endif  // PHONE_BOOK_HPP
+std::ostream &operator<<(std::ostream &out, PhoneBook const &p);
+
+#endif

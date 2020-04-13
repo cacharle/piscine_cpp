@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 09:06:06 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:06:11 by charles          ###   ########.fr       */
+/*   Created: 2020/04/13 07:31:38 by charles           #+#    #+#             */
+/*   Updated: 2020/04/13 09:07:18 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Pony.hpp"
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-Pony::Pony(int w, int s)
-{
-	weight = w;
-	max_speed = s;
-}
+# include <iostream>
+# include <sstream>
+# include <string>
+# include <cctype>
 
-void Pony::say_hello()
-{
-	std::cout << "Hi, I'm a pony, I weight " << weight
-		<< " and my speed limit is " << max_speed << std::endl;
-}
+int getInt();
 
-void Pony::run()
-{
-	for (int i = 0; i < max_speed; i++)
-		std::cout << "I'm running really fast at " << i << ", look at me!" << std::endl;
-}
+#endif

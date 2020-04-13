@@ -1,35 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 07:23:15 by charles           #+#    #+#             */
+/*   Updated: 2020/04/13 09:18:04 by charles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include "utils.hpp"
 
-int
-main()
+int main()
 {
-	std::string user_input;
-	size_t found_index;
-	PhoneBook phone_book = PhoneBook();
+    std::string input;
+    PhoneBook phoneBook;
+    int tmp;
 
-	while (true)
-	{
-		std::cin >> user_input;
-		if (user_input == "EXIT")
-			break;
-		else if ((found_index = user_input.find("ADD")) == 0)
-		{
-			Contact tmp = Contact(user_input.substr(found_index));
-			phone_book.add(tmp);
-		}
-		else if ((found_index = user_input.find("SEARCH")) == 0)
-		{
-			std::string searched = user_input.substr(found_index);
-			Contact *result = phone_book.search(searched);
-			if (result == NULL)
-				std::cout << "Notfound: " << searched << std::endl;
-			else
-				std::cout << "Found: " << result->name
-					      << " phone: " << result->phone_str() << std::endl;
-
-		}
-	}
-	return 0;
+    while (true)
+    {
+        std::cout << "> " << std::flush;
+        if (!std::getline(std::cin, input))
+            break;
+        std::cout.flush();
+        if (input == "EXIT")
+            break;
+        else if (input == "ADD")
+        {
+            if (phoneBook.getSize() >= 8)
+                std::cout << "Error: Phonebook is full" << std::endl;
+            else
+                phoneBook.add(Contact::prompt());
+            std::cout << std::flush;
+        }
+        else if (input == "SEARCH")
+        {
+            std::cout << phoneBook << std::flush;
+            tmp = getInt();
+            if (tmp < 0 || size_t(tmp) >= phoneBook.getSize())
+                std::cout << "Error: Not valid index: " << tmp << std::endl;
+            else
+                phoneBook.get(tmp).put();
+            std::cout << std::flush;
+        }
+    }
+    return 0;
 }

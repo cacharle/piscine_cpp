@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 09:06:06 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:06:11 by charles          ###   ########.fr       */
+/*   Created: 2020/04/13 07:31:30 by charles           #+#    #+#             */
+/*   Updated: 2020/04/13 08:43:18 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Pony.hpp"
+#include "utils.hpp"
 
-Pony::Pony(int w, int s)
+int getInt()
 {
-	weight = w;
-	max_speed = s;
-}
+    std::string s;
+    int tmp;
 
-void Pony::say_hello()
-{
-	std::cout << "Hi, I'm a pony, I weight " << weight
-		<< " and my speed limit is " << max_speed << std::endl;
-}
-
-void Pony::run()
-{
-	for (int i = 0; i < max_speed; i++)
-		std::cout << "I'm running really fast at " << i << ", look at me!" << std::endl;
+    std::cin >> s;
+    for (size_t i = 0; i < s.length(); i++)
+        if (!isdigit(s[i]))
+            return (-1);
+    std::istringstream(s) >> tmp;
+    return tmp;
 }

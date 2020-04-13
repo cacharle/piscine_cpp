@@ -1,20 +1,32 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/04/13 08:32:50 by charles           #+#    #+#              #
+#    Updated: 2020/04/13 08:42:09 by charles          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 RM = rm -f
 
-CC = clang++
-CCFLAGS = -Wall -Wextra -Werror
+CXX = clang++
+CXXFLAGS = -Wall -Wextra -Werror
 
 NAME = crapyphonebook
-SRC = main.cpp PhoneBook.cpp Contact.cpp
+SRC = main.cpp PhoneBook.cpp Contact.cpp utils.cpp
 OBJ = $(SRC:.cpp=.o)
 
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CCFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -o $@ $<
+	$(CXX) $(CXXFLAGS) -o $@ $<
 
 clean:
 	$(RM) $(OBJ)
