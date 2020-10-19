@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:04:32 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 18:42:13 by charles          ###   ########.fr       */
+/*   Updated: 2020/10/19 13:26:06 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat
 {
 public:
     Bureaucrat(Bureaucrat const& other);
-    void operator=(Bureaucrat const& other);
+    Bureaucrat& operator=(Bureaucrat const& other);
     ~Bureaucrat();
 
     Bureaucrat(std::string const& name, int grade);
@@ -34,7 +34,7 @@ public:
     public:
         GradeTooHighException();
         GradeTooHighException(GradeTooHighException const& other);
-        void operator=(GradeTooHighException const& other);
+        GradeTooHighException& operator=(GradeTooHighException const& other);
         ~GradeTooHighException();
         virtual char const* what() const throw();
     };
@@ -44,7 +44,7 @@ public:
     public:
         GradeTooLowException();
         GradeTooLowException(GradeTooLowException const& other);
-        void operator=(GradeTooLowException const& other);
+        GradeTooLowException& operator=(GradeTooLowException const& other);
         ~GradeTooLowException();
         virtual char const* what() const throw();
     };

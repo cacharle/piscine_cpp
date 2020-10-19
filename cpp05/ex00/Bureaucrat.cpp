@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:08:13 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 18:44:49 by charles          ###   ########.fr       */
+/*   Updated: 2020/10/19 13:26:35 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ Bureaucrat::Bureaucrat(Bureaucrat const& other)
     *this = other;
 }
 
-void Bureaucrat::operator=(Bureaucrat const& other)
+Bureaucrat& Bureaucrat::operator=(Bureaucrat const& other)
 {
     m_grade = other.m_grade;
+    return *this;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -56,6 +57,10 @@ void Bureaucrat::decrementGrade()
         m_grade++;
 }
 
+///////////////////////////////////////////////////////////////////////////////
+// Exceptions
+///////////////////////////////////////////////////////////////////////////////
+
 Bureaucrat::GradeTooHighException::GradeTooHighException() : std::exception()
 {}
 
@@ -63,9 +68,11 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException c
     : std::exception(other)
 {}
 
-void Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const& other)
+Bureaucrat::GradeTooHighException&
+Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const& other)
 {
     std::exception::operator=(other);
+    return *this;
 }
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException()
@@ -83,9 +90,11 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException cons
     : std::exception(other)
 {}
 
-void Bureaucrat::GradeTooLowException::operator=(GradeTooLowException const& other)
+Bureaucrat::GradeTooLowException&
+Bureaucrat::GradeTooLowException::operator=(GradeTooLowException const& other)
 {
     std::exception::operator=(other);
+    return *this;
 }
 
 Bureaucrat::GradeTooLowException::~GradeTooLowException()
