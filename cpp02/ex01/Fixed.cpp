@@ -6,14 +6,13 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:45:18 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 13:02:27 by charles          ###   ########.fr       */
+/*   Updated: 2020/10/19 11:29:39 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-    : m_value(0)
+Fixed::Fixed() : m_value(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
@@ -35,20 +34,20 @@ void Fixed::operator=(Fixed const& other)
     m_value = other.getRawBits();
 }
 
-Fixed::Fixed(int from)
+Fixed::Fixed(const int from)
 {
-    std::cout << " constructor called" << std::endl;
+    std::cout << "Int constructor called" << std::endl;
     m_value = from << m_fractionalBits;
 }
 
-Fixed::Fixed(float from)
+Fixed::Fixed(const float from)
 {
-    m_value = 0;
+    std::cout << "Float constructor called" << std::endl;
+    m_value = roundf(from * (1 << m_fractionalBits));
 }
 
 int Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return m_value;
 }
 
@@ -60,7 +59,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat() const
 {
-    return 0;
+    return (float)m_value / (float)(1 << m_fractionalBits);
 }
 
 int Fixed::toInt() const
@@ -75,11 +74,6 @@ int Fixed::getFractionalBits()
 
 std::ostream& operator<<(std::ostream& out, Fixed const& f)
 {
-    int dec_part;
-    int shift_size;
-
-    shift_size = (sizeof(int) * 8) - Fixed::getFractionalBits();
-    dec_part = f.getRawBits() << shift_size >> shift_size;
-    out << f.toInt() << '.' << dec_part;
+    out << f.toFloat();
     return out;
 }

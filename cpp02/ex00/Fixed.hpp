@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:40:49 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 11:53:30 by charles          ###   ########.fr       */
+/*   Updated: 2020/10/19 08:27:01 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ public:
     Fixed(Fixed const& other);
     ~Fixed();
     void operator=(Fixed const& other);
-    int getRawBits() const;
+
+    int  getRawBits() const;
     void setRawBits(int const raw);
 
 private:
