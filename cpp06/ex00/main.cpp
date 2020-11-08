@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/14 17:19:10 by charles           #+#    #+#             */
-/*   Updated: 2020/04/15 10:05:47 by charles          ###   ########.fr       */
+/*   Created: 2020/04/16 10:54:10 by charles           #+#    #+#             */
+/*   Updated: 2020/04/16 12:23:06 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include <iostream>
+#include <sstream>
 
-MateriaSource::MateriaSource()
+int main(int argc, char **argv)
 {
+    // if (argc != 2)
+    // {
+    //     std::cout << "Usage: " << argv[0] << " litteral" << std::endl;
+    //     return 1;
+    // }
 
-}
+    int i;
 
-MateriaSource::MateriaSource(MateriaSource const& other)
-{
-    *this = other;
-}
+    std::istringstream("bonjour") >> i;
 
-void MateriaSource::operator=(MateriaSource const& other)
-{
 
-}
+    std::cout << i << std::endl;
 
-MateriaSource::~MateriaSource()
-{
-
-}
-
-void MateriaSource::learnMateria(AMateria* materia)
-{
-
-}
-
-AMateria* MateriaSource::createMateria(std::string const& type)
-{
-    return NULL;
+    return 0;
 }

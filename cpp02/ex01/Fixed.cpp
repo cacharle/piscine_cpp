@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:45:18 by charles           #+#    #+#             */
-/*   Updated: 2020/10/19 11:29:39 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/08 13:38:40 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ float Fixed::toFloat() const
 
 int Fixed::toInt() const
 {
-    return m_value >> m_fractionalBits;
+    return roundf(toFloat());
 }
 
 int Fixed::getFractionalBits()

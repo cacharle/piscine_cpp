@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/14 17:19:10 by charles           #+#    #+#             */
-/*   Updated: 2020/04/15 10:05:47 by charles          ###   ########.fr       */
+/*   Created: 2020/04/15 10:00:18 by charles           #+#    #+#             */
+/*   Updated: 2020/04/15 10:05:23 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include <iostream>
+#include <cstdlib>
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-MateriaSource::MateriaSource()
+Base* generate(void)
 {
-
-}
-
-MateriaSource::MateriaSource(MateriaSource const& other)
-{
-    *this = other;
-}
-
-void MateriaSource::operator=(MateriaSource const& other)
-{
-
-}
-
-MateriaSource::~MateriaSource()
-{
-
-}
-
-void MateriaSource::learnMateria(AMateria* materia)
-{
-
-}
-
-AMateria* MateriaSource::createMateria(std::string const& type)
-{
+    switch (rand() % 3)
+    {
+        case 0: return new A();
+        case 1: return new B();
+        case 2: return new C();
+    }
     return NULL;
+}
+
+int main()
+{
+    srand(time(NULL));
+
+    return 0;
 }

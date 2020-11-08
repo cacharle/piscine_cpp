@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:40:49 by charles           #+#    #+#             */
-/*   Updated: 2020/10/19 11:29:30 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/08 13:38:48 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,15 @@ public:
     int  getRawBits() const;
     void setRawBits(int const raw);
 
+    int   getRawBits() const;
+    void  setRawBits(int const raw);
     float toFloat() const;
     int   toInt()   const;
 
     static int getFractionalBits();
 
 private:
-    int m_value;
+    int              m_value;
     static int const m_fractionalBits = 8;
 };
 

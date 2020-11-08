@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:08:35 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 15:54:17 by charles          ###   ########.fr       */
+/*   Updated: 2020/04/15 10:06:04 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int Squad::getCount() const
 ISpaceMarine* Squad::getUnit(int n) const
 {
     if (n < 0 || n >= m_size)
-        return nullptr;
+        return NULL;
     return m_units[n];
 }
 
 int Squad::push(ISpaceMarine* spaceMarine)
 {
-    if (spaceMarine == nullptr)
+    if (spaceMarine == NULL)
         return (-1);
     for (int i = 0; i < m_size; i++)
         if (m_units[i] == spaceMarine)

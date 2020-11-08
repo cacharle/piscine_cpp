@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/14 17:19:10 by charles           #+#    #+#             */
-/*   Updated: 2020/04/15 10:05:47 by charles          ###   ########.fr       */
+/*   Created: 2020/04/15 09:56:52 by charles           #+#    #+#             */
+/*   Updated: 2020/04/15 10:03:37 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#ifndef A_HPP
+# define A_HPP
 
-MateriaSource::MateriaSource()
+# include "Base.hpp"
+
+class A : public Base
 {
+};
 
-}
-
-MateriaSource::MateriaSource(MateriaSource const& other)
-{
-    *this = other;
-}
-
-void MateriaSource::operator=(MateriaSource const& other)
-{
-
-}
-
-MateriaSource::~MateriaSource()
-{
-
-}
-
-void MateriaSource::learnMateria(AMateria* materia)
-{
-
-}
-
-AMateria* MateriaSource::createMateria(std::string const& type)
-{
-    return NULL;
-}
+#endif
