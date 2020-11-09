@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:52:11 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 10:57:08 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/09 12:58:23 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,18 @@ ZombieHorde::ZombieHorde(int n)
 		"earth",
 		"wind"
 	};
-	m_horde = new Zombie*[m_size];
+	m_horde = new Zombie[m_size];
 	for (size_t i = 0; i < m_size; i++)
-		m_horde[i] = new Zombie(name_pool[rand() % 10], type_pool[rand() % 4]);
+    {
+		m_horde[i].setName(name_pool[rand() % 10]);
+        m_horde[i].setType(type_pool[rand() % 4]);
+    }
 }
 
 ZombieHorde::~ZombieHorde()
 {
     if (m_horde == NULL)
         return;
-	for (size_t i = 0; i < m_size; i++)
-		delete m_horde[i];
 	delete [] m_horde;
 }
 
@@ -58,5 +59,5 @@ void ZombieHorde::announce()
     if (m_horde == NULL)
         return;
 	for (size_t i = 0; i < m_size; i++)
-		m_horde[i]->announce();
+		m_horde[i].announce();
 }

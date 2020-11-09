@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:56:14 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 10:57:25 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/09 12:54:36 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ int main()
 	negative_horde->announce();
     delete negative_horde;
 
+
+    std::cout << std::endl << "=== Stack horde destroyed ===" << std::endl;
     return 0;
 }

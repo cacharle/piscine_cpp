@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:52:18 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 10:53:45 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/09 12:45:34 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
     void announce();
 
 private:
-    size_t   m_size;
-    Zombie** m_horde;
+    size_t  m_size;
+    Zombie* m_horde;
 };
 
 #endif

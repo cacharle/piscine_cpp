@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:40:26 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 10:38:52 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/09 12:53:45 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@
 class Zombie
 {
 public:
+    Zombie();
     Zombie(std::string const& name, std::string const& type);
     ~Zombie();
     void announce();
+    void setName(std::string const& name);
+    void setType(std::string const& type);
+
 
 private:
     std::string m_name;
