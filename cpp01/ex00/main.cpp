@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:26:11 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:29:58 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 09:58:46 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 void ponyOnTheHeap()
 {
-	Pony *p = new Pony(200, 100);
+    std::cout << "=== ponyOnTheHeap ===" << std::endl;
+	Pony *p = new Pony("ChunkyBoy", 200, 100);
 	p->sayHello();
 	p->run();
 	delete p;
@@ -23,7 +24,8 @@ void ponyOnTheHeap()
 
 void ponyOnTheStack()
 {
-	Pony p(200, 100);
+    std::cout << "=== ponyOnTheStack ===" << std::endl;
+	Pony p("Jean", 200, 100);
 	p.sayHello();
 	p.run();
 }
@@ -31,6 +33,7 @@ void ponyOnTheStack()
 int main()
 {
 	ponyOnTheHeap();
+    std::cout << std::endl;
 	ponyOnTheStack();
 	return 0;
 }

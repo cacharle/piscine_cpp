@@ -6,15 +6,15 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:41:33 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:49:36 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 10:25:24 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
-void ZombieEvent::setZombieType(std::string storedType)
+void ZombieEvent::setZombieType(std::string const& type)
 {
-	m_storedType = storedType;
+	m_storedType = type;
 }
 
 Zombie* ZombieEvent::newZombie(std::string name)
@@ -36,5 +36,5 @@ Zombie* ZombieEvent::randomChump()
 		"yo",
 		"rideaux"
 	};
-	return new Zombie(pool[rand() % 10], m_storedType);
+	return newZombie(pool[rand() % 10]);
 }

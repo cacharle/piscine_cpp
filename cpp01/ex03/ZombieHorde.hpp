@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:52:18 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:59:53 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 10:53:45 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 # include <cstdlib>
 # include <string>
+# include <iostream>
 # include "Zombie.hpp"
 
 class ZombieHorde
 {
 public:
-    ZombieHorde(int n);
+    ZombieHorde(int n);  // subject wants int
     ~ZombieHorde();
     void announce();
 
 private:
-    size_t m_size;
+    size_t   m_size;
     Zombie** m_horde;
 };
 

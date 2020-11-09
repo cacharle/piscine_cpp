@@ -6,23 +6,20 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 16:36:23 by cacharle          #+#    #+#             */
-/*   Updated: 2020/04/13 10:25:35 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 11:08:23 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string t)
-    : type(t)
-{
-}
+Weapon::Weapon(std::string t) : type(t) {}
 
-const std::string& Weapon::getType() const
+std::string const& Weapon::getType() const
 {
 	return type;
 }
 
-void Weapon::setType(const std::string& t)
+void Weapon::setType(std::string const& t)
 {
 	type = t;
 }

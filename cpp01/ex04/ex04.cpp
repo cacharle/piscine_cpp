@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 12:43:03 by cacharle          #+#    #+#             */
-/*   Updated: 2020/04/13 10:01:19 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 10:59:22 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int main()
 	std::string& ref_s = s;
 
 	std::cout << *ptr_s << std::endl;
-	std::cout << ref_s << std::endl;
+	std::cout << ref_s  << std::endl;
 	return 0;
 }

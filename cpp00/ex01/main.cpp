@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 07:23:15 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:18:04 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 09:22:22 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 int main()
 {
     std::string input;
-    PhoneBook phoneBook;
-    int tmp;
+    PhoneBook   phoneBook;
 
     while (true)
     {
@@ -40,7 +39,7 @@ int main()
         else if (input == "SEARCH")
         {
             std::cout << phoneBook << std::flush;
-            tmp = getInt();
+            int tmp = getInt();
             if (tmp < 0 || size_t(tmp) >= phoneBook.getSize())
                 std::cout << "Error: Not valid index: " << tmp << std::endl;
             else

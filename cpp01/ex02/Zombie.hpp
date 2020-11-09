@@ -6,19 +6,21 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:40:26 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:40:49 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 10:26:25 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
+# include <iostream>
 # include <string>
 
 class Zombie
 {
 public:
-    Zombie(std::string name, std::string type);
+    Zombie(std::string const& name, std::string const& type);
+    ~Zombie();
     void announce();
 
 private:

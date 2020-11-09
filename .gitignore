@@ -1,4 +1,5 @@
 *.o
+*.dSYM
 a.out
 megaphone
 crapyphonebook

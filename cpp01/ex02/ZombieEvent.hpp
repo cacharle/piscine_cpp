@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:42:36 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 09:45:36 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 10:10:57 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class ZombieEvent
 {
 public:
-    void setZombieType(std::string type);
-    Zombie* newZombie(std::string name);
+    void    setZombieType(std::string const& type);
+    Zombie* newZombie(std::string name);  // subject prototype without const&
     Zombie* randomChump();
 
 private:

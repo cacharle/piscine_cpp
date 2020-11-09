@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 07:23:11 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 08:57:01 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 09:30:12 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ class Contact
 {
 public:
     static Contact prompt();
-    void preview() const;
-    void put() const;
+    void           preview() const;
+    void           put()     const;
 
 private:
-    static void promptString(std::string promptString, std::string &s);
-    static void promptInt(std::string promptString, int &i);
+    static void        promptString(std::string promptString, std::string& s);
+    static void        promptInt(std::string promptString, int& i);
     static std::string trimedName(std::string name);
 
     struct Address

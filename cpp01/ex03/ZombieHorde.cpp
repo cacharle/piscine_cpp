@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:52:11 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 10:02:01 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 10:57:08 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 ZombieHorde::ZombieHorde(int n)
     : m_size(n)
 {
+    if (n < 0)
+    {
+        std::cerr << "Error: n should be > 0" << std::endl;
+        m_horde = NULL;
+        return;
+    }
 	std::string name_pool[10] = {
 		"Jordan",
 		"Mr.poopybutthole",
@@ -40,6 +46,8 @@ ZombieHorde::ZombieHorde(int n)
 
 ZombieHorde::~ZombieHorde()
 {
+    if (m_horde == NULL)
+        return;
 	for (size_t i = 0; i < m_size; i++)
 		delete m_horde[i];
 	delete [] m_horde;
@@ -47,6 +55,8 @@ ZombieHorde::~ZombieHorde()
 
 void ZombieHorde::announce()
 {
+    if (m_horde == NULL)
+        return;
 	for (size_t i = 0; i < m_size; i++)
 		m_horde[i]->announce();
 }
