@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 07:23:13 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 09:29:37 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/09 12:33:21 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ std::ostream& operator<<(std::ostream& out, PhoneBook const& p)
 {
     for (size_t i = 0; i < p.getSize(); i++)
     {
-        out << i << "|";
+        out << std::setw(10) << i << "|";
         p.get(i).preview();
         std::cout << std::endl;
     }

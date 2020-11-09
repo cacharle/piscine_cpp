@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 07:23:11 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 09:30:12 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/09 12:04:19 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ private:
         std::string m_street;
         std::string m_city;
     };
+
     struct Date
     {
         int         m_day;

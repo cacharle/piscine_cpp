@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 07:23:15 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 09:22:22 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/09 12:17:23 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int main()
 
     while (true)
     {
-        std::cout << "> " << std::flush;
+        if (std::cin.good())
+            std::cout << "> " << std::flush;
         if (!std::getline(std::cin, input))
             break;
         std::cout.flush();
@@ -43,7 +44,7 @@ int main()
             if (tmp < 0 || size_t(tmp) >= phoneBook.getSize())
                 std::cout << "Error: Not valid index: " << tmp << std::endl;
             else
-                phoneBook.get(tmp).put();
+                phoneBook.get(size_t(tmp)).put();
             std::cout << std::flush;
         }
     }
