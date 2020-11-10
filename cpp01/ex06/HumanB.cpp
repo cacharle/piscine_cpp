@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 16:46:02 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/09 11:13:34 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 08:36:16 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void HumanB::attack()
 	    std::cout << m_name << " attack with his " << m_weapon->getType() << std::endl;
 }
 
-void HumanB::setWeapon(Weapon& weapon)
+void HumanB::setWeapon(Weapon const& weapon)
 {
 	m_weapon = &weapon;
 }

@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 12:52:39 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/09 11:03:44 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 08:31:46 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Human
 public:
     Human();
     std::string	 identify() const;
-    const Brain& getBrain() const;
+    Brain const& getBrain() const;
 
 private:
     const Brain m_brain;

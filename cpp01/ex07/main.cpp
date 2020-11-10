@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 17:08:28 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/09 11:22:46 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 09:25:28 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,26 @@ int main(int argc, char **argv)
 	std::string filename(argv[1]);
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
-    if (filename.empty() || s1.empty() || s2.empty())
+    if (s1.empty() || s2.empty())
     {
-		std::cerr << "Error: filename, s1 and s2 should not be empty" << std::endl;
+		std::cerr << "Error: s1 and s2 should not be empty" << std::endl;
 		return 1;
     }
 
 	std::ifstream file(filename);
-	std::ofstream outfile(filename + ".replace");
+	std::ofstream outfile(filename + ".replace", std::ofstream::trunc);
 	if (!file.is_open())
 	{
-		std::cerr << "Could not open " << filename;
+		std::cerr << "Could not open " << filename
+                  << ": " << std::strerror(errno) << std::endl;
+        outfile.close();
 		return 1;
 	}
 	if (!outfile.is_open())
 	{
-		std::cerr << "Could not create " << filename << ".replace";
+		std::cerr << "Could not create " << filename << ".replace"
+                  << ": " << std::strerror(errno) << std::endl;
+        file.close();
 		return 1;
 	}
 

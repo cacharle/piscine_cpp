@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:40:49 by charles           #+#    #+#             */
-/*   Updated: 2020/11/08 13:38:48 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 13:11:15 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     Fixed();
     Fixed(Fixed const& other);
     ~Fixed();
-    void operator=(Fixed const& other);
+    Fixed& operator=(Fixed const& other);
 
     Fixed(const int   from);
     Fixed(const float from);

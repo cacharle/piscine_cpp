@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:45:18 by charles           #+#    #+#             */
-/*   Updated: 2020/11/08 13:38:40 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/09 13:11:29 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-void Fixed::operator=(Fixed const& other)
+Fixed& Fixed::operator=(Fixed const& other)
 {
     std::cout << "Assignation operator called" << std::endl;
     m_value = other.getRawBits();
+    return *this;
 }
 
 Fixed::Fixed(const int from)

@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 12:52:38 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/09 11:04:09 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 08:31:38 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ std::string	Human::identify() const
 	return m_brain.identify();
 }
 
-const Brain& Human::getBrain() const
+Brain const& Human::getBrain() const
 {
 	return m_brain;
 }
