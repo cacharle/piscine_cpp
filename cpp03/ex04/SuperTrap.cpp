@@ -6,13 +6,13 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:52:56 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 17:55:14 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:44:33 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap():
+SuperTrap::SuperTrap() :
     m_prefix("SUP3R-TP"),
     m_hitPoints(100),
     m_maxHitPoints(100),
@@ -27,7 +27,7 @@ SuperTrap::SuperTrap():
 	std::cout << m_prefix << "New " << m_name << ": your gaming references suck" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name):
+SuperTrap::SuperTrap(std::string const& name) :
     m_prefix("SUP3R-TP"),
     m_hitPoints(100),
     m_maxHitPoints(100),
@@ -57,6 +57,7 @@ void SuperTrap::operator=(SuperTrap const& other)
     m_meleeAttackDamage    = other.m_meleeAttackDamage;
     m_rangedAttackDamage   = other.m_rangedAttackDamage;
     m_armorDamageReduction = other.m_armorDamageReduction;
+    return *this;
 }
 
 SuperTrap::~SuperTrap()

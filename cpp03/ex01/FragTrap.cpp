@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:20:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/04/13 15:17:13 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:12:57 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ FragTrap::FragTrap():
 	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name):
+FragTrap::FragTrap(std::string const& name):
     m_hitPoints(100),
     m_maxHitPoints(100),
     m_energyPoints(100),
@@ -45,7 +45,7 @@ FragTrap::FragTrap(FragTrap const& other)
     *this = other;
 }
 
-void FragTrap::operator=(FragTrap const& other)
+FragTrap& FragTrap::operator=(FragTrap const& other)
 {
     m_hitPoints            = other.m_hitPoints;
     m_maxHitPoints         = other.m_maxHitPoints;
@@ -55,6 +55,7 @@ void FragTrap::operator=(FragTrap const& other)
     m_meleeAttackDamage    = other.m_meleeAttackDamage;
     m_rangedAttackDamage   = other.m_rangedAttackDamage;
     m_armorDamageReduction = other.m_armorDamageReduction;
+    return *this;
 }
 
 FragTrap::~FragTrap()

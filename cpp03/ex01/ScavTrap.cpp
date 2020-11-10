@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:15:03 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 14:31:23 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 15:06:00 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap():
 	std::cout << "New " << m_name << ": your gaming references suck" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name):
+ScavTrap::ScavTrap(std::string const& name):
     m_hitPoints(100),
     m_maxHitPoints(100),
     m_energyPoints(50),
@@ -45,7 +45,7 @@ ScavTrap::ScavTrap(ScavTrap const& other)
     *this = other;
 }
 
-void ScavTrap::operator=(ScavTrap const& other)
+ScavTrap& ScavTrap::operator=(ScavTrap const& other)
 {
     m_hitPoints            = other.m_hitPoints;
     m_maxHitPoints         = other.m_maxHitPoints;
@@ -55,6 +55,7 @@ void ScavTrap::operator=(ScavTrap const& other)
     m_meleeAttackDamage    = other.m_meleeAttackDamage;
     m_rangedAttackDamage   = other.m_rangedAttackDamage;
     m_armorDamageReduction = other.m_armorDamageReduction;
+    return *this;
 }
 
 ScavTrap::~ScavTrap()
@@ -113,5 +114,4 @@ void ScavTrap::challengeNewcomer(std::string const& target)
 	std::cout << "SC4V-TP " << m_name
               << " challenge " << target
               << " to " << challenges[rand() % 5] << std::endl;
-    m_energyPoints -= 25;
 }

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:31:24 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 17:45:16 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:43:01 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class NinjaTrap : public ClapTrap
 {
 public:
 	NinjaTrap();
-	NinjaTrap(std::string name);
+	NinjaTrap(std::string const& name);
 	NinjaTrap(NinjaTrap const& other);
-	void operator=(NinjaTrap const& other);
+	NinjaTrap& operator=(NinjaTrap const& other);
 	~NinjaTrap();
 
     void ninjaShoebox(NinjaTrap const& target);

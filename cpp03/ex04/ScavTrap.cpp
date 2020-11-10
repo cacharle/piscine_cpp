@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:15:03 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 15:46:56 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 15:06:28 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,4 @@ void ScavTrap::challengeNewcomer(std::string const& target)
 	std::cout << "SC4V-TP " << m_name
               << " challenge " << target
               << " to " << challenges[rand() % 5] << std::endl;
-    m_energyPoints -= 25;
 }

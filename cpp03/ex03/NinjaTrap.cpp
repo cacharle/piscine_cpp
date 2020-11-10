@@ -6,14 +6,13 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:33:00 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 17:47:20 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:43:25 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap():
-    ClapTrap()
+NinjaTrap::NinjaTrap() : ClapTrap()
 {
     m_prefix = "NINJ4-TP ";
     m_hitPoints = 60;
@@ -26,8 +25,7 @@ NinjaTrap::NinjaTrap():
 	std::cout << m_prefix << "New " << m_name << ": your gaming references suck" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(std::string name):
-    ClapTrap(name)
+NinjaTrap::NinjaTrap(std::string const& name) : ClapTrap(name)
 {
     m_prefix = "NINJ4-TP ";
     m_hitPoints = 60;
@@ -45,7 +43,7 @@ NinjaTrap::NinjaTrap(NinjaTrap const& other)
     *this = other;
 }
 
-void NinjaTrap::operator=(NinjaTrap const& other)
+NinjaTrap& NinjaTrap::operator=(NinjaTrap const& other)
 {
     m_hitPoints            = other.m_hitPoints;
     m_maxHitPoints         = other.m_maxHitPoints;
@@ -55,6 +53,7 @@ void NinjaTrap::operator=(NinjaTrap const& other)
     m_meleeAttackDamage    = other.m_meleeAttackDamage;
     m_rangedAttackDamage   = other.m_rangedAttackDamage;
     m_armorDamageReduction = other.m_armorDamageReduction;
+    return *this;
 }
 
 NinjaTrap::~NinjaTrap()

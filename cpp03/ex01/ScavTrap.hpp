@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:11:51 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 15:18:01 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:13:16 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class ScavTrap
 {
 public:
     ScavTrap();
-    ScavTrap(std::string name);
+    ScavTrap(std::string const& name);
     ScavTrap(ScavTrap const& other);
-    void operator=(ScavTrap const& other);
+    ScavTrap& operator=(ScavTrap const& other);
     ~ScavTrap();
 
 	void rangedAttack(std::string const& target) const;

@@ -6,42 +6,72 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:41:27 by cacharle          #+#    #+#             */
-/*   Updated: 2020/04/13 14:30:37 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:21:47 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
+#include <fstream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main(void)
 {
-    srand(time(NULL));
+    int seed;
+    std::ifstream devRandom("/dev/random");
+    if (devRandom.is_open())
+    {
+        devRandom.read((char*)&seed, sizeof(int));
+        devRandom.close();
+    }
+    else
+        seed = time(NULL);
+	srand(seed);
 
     FragTrap ft("bob");
+    std::cout << "=== ATTACK ===" << std::endl;
     ft.rangedAttack("a dog");
     ft.meleeAttack("a cat");
+
+    std::cout << std::endl << "=== DAMAGE ===" << std::endl;
+    ft.takeDamage(0);
+    ft.beRepaired(0);
     ft.takeDamage(10);
     ft.beRepaired(10);
+
+    std::cout << std::endl << "=== VAULTHUNTER ===" << std::endl;
     ft.vaulthunter_dot_exe("your mom");
     ft.vaulthunter_dot_exe("your dad");
     ft.vaulthunter_dot_exe("your brother");
     ft.vaulthunter_dot_exe("your sister");
+    std::cout << "=== VAULTHUNTER NO ENERGY ===" << std::endl;
     ft.vaulthunter_dot_exe("your grandma");
+
+    std::cout << std::endl << "=== OVER LIMIT ===" << std::endl;
     ft.takeDamage(1000);
     ft.beRepaired(1000);
 
-    std::cout << std::endl;
+    std::cout << std::endl << std::endl << std::endl;
     ScavTrap scav("jean");
+    std::cout << "=== ATTACK ===" << std::endl;
     scav.rangedAttack("a dog");
     scav.meleeAttack("a cat");
+
+    std::cout << std::endl << "=== DAMAGE ===" << std::endl;
+    scav.takeDamage(0);
+    scav.beRepaired(0);
     scav.takeDamage(10);
     scav.beRepaired(10);
+
+    std::cout << std::endl << "=== CHALLENGE NEW COMER ===" << std::endl;
     scav.challengeNewcomer("your mom");
     scav.challengeNewcomer("your dad");
     scav.challengeNewcomer("your brother");
     scav.challengeNewcomer("your sister");
+    std::cout << "=== VAULTHUNTER NO ENERGY ===" << std::endl;
     scav.challengeNewcomer("your grandma");
+
+    std::cout << std::endl << "=== OVER LIMIT ===" << std::endl;
     scav.takeDamage(1000);
     scav.beRepaired(1000);
 	return 0;

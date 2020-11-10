@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 15:28:43 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 15:50:48 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:29:57 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap():
 	std::cout << m_prefix << "New " << m_name << ": your gaming references suck" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name):
+ClapTrap::ClapTrap(std::string const& name):
     m_prefix("CL4P-TP "),
     m_hitPoints(100),
     m_maxHitPoints(100),
@@ -47,7 +47,7 @@ ClapTrap::ClapTrap(ClapTrap const& other)
     *this = other;
 }
 
-void ClapTrap::operator=(ClapTrap const& other)
+ClapTrap& ClapTrap::operator=(ClapTrap const& other)
 {
     m_hitPoints            = other.m_hitPoints;
     m_maxHitPoints         = other.m_maxHitPoints;
@@ -57,6 +57,7 @@ void ClapTrap::operator=(ClapTrap const& other)
     m_meleeAttackDamage    = other.m_meleeAttackDamage;
     m_rangedAttackDamage   = other.m_rangedAttackDamage;
     m_armorDamageReduction = other.m_armorDamageReduction;
+    return *this;
 }
 
 ClapTrap::~ClapTrap()
