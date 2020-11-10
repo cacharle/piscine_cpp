@@ -6,14 +6,13 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:45:18 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 13:07:28 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 09:50:15 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-    : m_value(0)
+Fixed::Fixed() : m_value(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:45:18 by charles           #+#    #+#             */
-/*   Updated: 2020/10/19 12:41:30 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 12:00:43 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,12 @@ Fixed& Fixed::operator--()    { m_value++; return *this;                   }
 Fixed  Fixed::operator++(int) { Fixed copy(*this); m_value++; return copy; }
 Fixed  Fixed::operator--(int) { Fixed copy(*this); m_value--; return copy; }
 
-bool Fixed::operator<(Fixed const& other)  const { return m_value < other.m_value;  }
-bool Fixed::operator>(Fixed const& other)  const { return m_value > other.m_value;  }
-bool Fixed::operator<=(Fixed const& other) const { return !(*this > other);         }
-bool Fixed::operator>=(Fixed const& other) const { return !(*this < other);         }
-bool Fixed::operator==(Fixed const& other) const { return m_value == other.m_value; }
-bool Fixed::operator!=(Fixed const& other) const { return !(*this == other);        }
-
-int Fixed::getFractionalBits() { return m_fractionalBits; }
+bool Fixed::operator<(Fixed const& other)  const { return m_value < other.m_value;         }
+bool Fixed::operator>(Fixed const& other)  const { return m_value > other.m_value;         }
+bool Fixed::operator<=(Fixed const& other) const { return *this < other || *this == other; }
+bool Fixed::operator>=(Fixed const& other) const { return *this > other || *this == other; }
+bool Fixed::operator==(Fixed const& other) const { return m_value == other.m_value;        }
+bool Fixed::operator!=(Fixed const& other) const { return !(*this == other);               }
 
 Fixed&       Fixed::max(Fixed& a, Fixed& b)             { return a > b ? a : b; }
 Fixed&       Fixed::min(Fixed& a, Fixed& b)             { return a < b ? a : b; }

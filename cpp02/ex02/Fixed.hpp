@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:40:49 by charles           #+#    #+#             */
-/*   Updated: 2020/10/19 12:41:46 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 11:06:40 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,11 @@ public:
     static const Fixed& max(Fixed const& a, Fixed const& b);
     static const Fixed& min(Fixed const& a, Fixed const& b);
 
-    static int getFractionalBits();
-
 private:
-    int m_value;
+    int              m_value;
     static int const m_fractionalBits = 8;
 };
 
 std::ostream& operator<<(std::ostream& out, Fixed const& f);
-
-
 
 #endif

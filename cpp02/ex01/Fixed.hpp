@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 11:40:49 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 13:11:15 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/10 10:02:06 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,11 @@ public:
     Fixed(const int   from);
     Fixed(const float from);
 
-    int  getRawBits() const;
-    void setRawBits(int const raw);
-
     int   getRawBits() const;
     void  setRawBits(int const raw);
-    float toFloat() const;
-    int   toInt()   const;
+
+    float toFloat(void) const;  // void asked by subject
+    int   toInt(void)   const;
 
     static int getFractionalBits();
 
