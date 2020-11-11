@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:11:51 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 18:41:33 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/11 07:04:45 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <cstdlib>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
     ScavTrap();
-    ScavTrap(std::string name);
+    ScavTrap(std::string const& name);
     ScavTrap(ScavTrap const& other);
-    void operator=(ScavTrap const& other);
+    ScavTrap& operator=(ScavTrap const& other);
     ~ScavTrap();
 
     void challengeNewcomer(std::string const& target);

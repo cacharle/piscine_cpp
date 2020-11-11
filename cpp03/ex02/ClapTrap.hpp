@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 15:20:45 by charles           #+#    #+#             */
-/*   Updated: 2020/11/10 14:29:37 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/11 06:39:00 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ public:
 	void beRepaired(unsigned int amount);
 
 protected:
-    std::string  m_prefix;
-
     unsigned int m_hitPoints;
     unsigned int m_maxHitPoints;
     unsigned int m_energyPoints;

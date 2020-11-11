@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:48:31 by charles           #+#    #+#             */
-/*   Updated: 2020/11/10 14:44:07 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/11 07:13:14 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ public:
 
 	void rangedAttack(std::string const& target) const;
 	void meleeAttack(std::string const& target) const;
-
 };
 
 #endif

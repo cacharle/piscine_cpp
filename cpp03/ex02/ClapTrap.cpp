@@ -6,14 +6,13 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 15:28:43 by charles           #+#    #+#             */
-/*   Updated: 2020/11/10 14:29:57 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/11 06:41:35 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap():
-    m_prefix("CL4P-TP "),
     m_hitPoints(100),
     m_maxHitPoints(100),
     m_energyPoints(100),
@@ -24,11 +23,10 @@ ClapTrap::ClapTrap():
     m_rangedAttackDamage(0),
     m_armorDamageReduction(0)
 {
-	std::cout << m_prefix << "New " << m_name << ": your gaming references suck" << std::endl;
+	std::cout << "CL4P-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const& name):
-    m_prefix("CL4P-TP "),
     m_hitPoints(100),
     m_maxHitPoints(100),
     m_energyPoints(100),
@@ -39,7 +37,7 @@ ClapTrap::ClapTrap(std::string const& name):
     m_rangedAttackDamage(0),
     m_armorDamageReduction(0)
 {
-	std::cout << m_prefix << "New " << m_name << ": your gaming references suck" << std::endl;
+	std::cout << "CL4P-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const& other)
@@ -62,23 +60,23 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "CL4P-TP " << "Delete "<< m_name << ": your gaming references still suck" << std::endl;
+	std::cout << "CL4P-TP Delete "<< m_name << ": your gaming references still suck" << std::endl;
 }
 
 void ClapTrap::rangedAttack(std::string const& target) const
 {
-	std::cout << m_prefix << m_name
-              << " attacks " << target
+	std::cout << "CL4P-TP "            << m_name
+              << " attacks "           << target
 			  << " at range, causing " << m_rangedAttackDamage
-              << " points of damage!" << std::endl;
+              << " points of damage!"  << std::endl;
 }
 
 void ClapTrap::meleeAttack(std::string const& target) const
 {
-	std::cout << m_prefix << m_name
-              << " attacks " << target
+	std::cout << "CL4P-TP "                <<  m_name
+              << " attacks "               << target
 			  << " in melee mode causing " << m_meleeAttackDamage
-              << " points of damage!" << std::endl;
+              << " points of damage!"      << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -90,9 +88,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (amount > m_hitPoints)
         amount = m_hitPoints;
 	m_hitPoints -= amount;
-	std::cout << m_prefix << m_name
-              << " takes " << amount
-              << " damage" << std::endl;
+	std::cout << "CL4P-TP " << m_name
+              << " takes "  << amount
+              << " damage"  << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -100,7 +98,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     if (amount + m_hitPoints > m_maxHitPoints)
         amount = m_maxHitPoints - m_hitPoints;
     m_hitPoints += amount;
-	std::cout << m_prefix << m_name
-              << " gained " << amount
+	std::cout << "CL4P-TP "    <<  m_name
+              << " gained "    << amount
               << " hit points" << std::endl;
 }

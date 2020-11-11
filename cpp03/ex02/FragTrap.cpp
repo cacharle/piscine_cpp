@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:20:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/10 14:39:26 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/11 06:42:32 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-    m_prefix = "FR4G-TP ";
-    m_energyPoints = 100;
-    m_maxEnergyPoints = 100;
-    m_meleeAttackDamage = 30;
-    m_rangedAttackDamage = 20;
+    m_energyPoints         = 100;
+    m_maxEnergyPoints      = 100;
+    m_meleeAttackDamage    = 30;
+    m_rangedAttackDamage   = 20;
     m_armorDamageReduction = 5;
 	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
 FragTrap::FragTrap(std::string const& name) : ClapTrap(name)
 {
-    m_prefix = "FR4G-TP ";
-    m_energyPoints = 100;
-    m_maxEnergyPoints = 100;
-    m_meleeAttackDamage = 30;
-    m_rangedAttackDamage = 20;
+    m_energyPoints         = 100;
+    m_maxEnergyPoints      = 100;
+    m_meleeAttackDamage    = 30;
+    m_rangedAttackDamage   = 20;
     m_armorDamageReduction = 5;
 	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
@@ -54,7 +52,7 @@ FragTrap& FragTrap::operator=(FragTrap const& other)
 
 FragTrap::~FragTrap()
 {
-	std::cout << m_prefix << "Delete "<< m_name << ": your gaming references still suck" << std::endl;
+	std::cout << "FR4G-TP Delete "<< m_name << ": your gaming references still suck" << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const& target)
