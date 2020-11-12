@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:42:25 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 14:09:51 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 13:56:59 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character
 {
 public:
     Character(Character const& other);
-    void operator=(Character const& other);
+    Character& operator=(Character const& other);
     ~Character();
 
     Character(std::string const& name);
@@ -37,8 +37,8 @@ private:
     Character();
 
     std::string m_name;
-    int m_ap;
-    AWeapon *m_weapon;
+    int         m_ap;
+    AWeapon*    m_weapon;
 };
 
 std::ostream& operator<<(std::ostream& out, Character const& c);

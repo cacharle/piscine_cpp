@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:31:43 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 15:45:55 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:37:41 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ TacticalMarine::TacticalMarine()
     std::cout << "Tactical Marine ready for battle!" << std::endl;
 }
 
-TacticalMarine::TacticalMarine(TacticalMarine const& other)
-{
-    *this = other;
-}
+TacticalMarine::TacticalMarine(TacticalMarine const& other) { *this = other; }
 
-void TacticalMarine::operator=(TacticalMarine const& other)
+TacticalMarine& TacticalMarine::operator=(TacticalMarine const& other)
 {
     (void)other;
+    return *this;
 }
 
 TacticalMarine::~TacticalMarine()

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 12:15:47 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 14:04:39 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 13:36:55 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PlasmaRifle : public AWeapon
 public:
     PlasmaRifle();
     PlasmaRifle(PlasmaRifle const& other);
-    void operator=(PlasmaRifle const& other);
+    PlasmaRifle& operator=(PlasmaRifle const& other);
     ~PlasmaRifle();
 
     virtual void attack() const;

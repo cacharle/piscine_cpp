@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:40:25 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 17:55:14 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:42:12 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string>
 # include "AMateria.hpp"
+
+class IMateria;
 
 class ICharacter
 {
@@ -28,7 +30,7 @@ public:
 protected:
     ICharacter();
     ICharacter(ICharacter const& other);
-    void operator=(ICharacter const& other);
+    ICharacter& operator=(ICharacter const& other);
 };
 
 #endif

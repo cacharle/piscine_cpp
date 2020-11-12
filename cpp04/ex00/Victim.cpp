@@ -6,46 +6,40 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:42:22 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 20:59:51 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 12:59:36 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
 
-Victim::Victim(std::string name) :
-    m_name(name)
+Victim::Victim(std::string const& name) : m_name(name)
 {
-    std::cout << "Some random victim called " << name << " just appeared!" << std::endl;
+    std::cout << "Some random victim called " << name
+              << " just appeared!" << std::endl;
 }
 
-void Victim::operator=(Victim const& other)
+Victim& Victim::operator=(Victim const& other)
 {
     m_name = other.m_name;
+    return *this;
 }
 
-Victim::Victim(Victim const& other)
-{
-    *this = other;
-}
+Victim::Victim(Victim const& other) { *this = other; }
 
 Victim::~Victim()
 {
-    std::cout << "Victim " << m_name << " just died for no apparent reason!" << std::endl;
+    std::cout << "Victim " << m_name
+              << " just died for no apparent reason!" << std::endl;
 }
 
-std::string const& Victim::getName() const
-{
-    return m_name;
-}
+std::string const& Victim::getName() const { return m_name; }
 
 void Victim::getPolymorphed() const
 {
     std::cout << m_name << " has been turned into a cute little sheep!" << std::endl;
 }
 
-Victim::Victim()
-{
-}
+Victim::Victim() {}
 
 std::ostream& operator<<(std::ostream& out, Victim const& v)
 {

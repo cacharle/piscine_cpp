@@ -6,39 +6,29 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:08:35 by charles           #+#    #+#             */
-/*   Updated: 2020/04/15 10:06:04 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:38:55 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad() : m_units(new ISpaceMarine*[0]), m_size(0)
-{
-}
+Squad::Squad() : m_units(new ISpaceMarine*[0]), m_size(0) {}
 
-Squad::Squad(Squad const& other)
-{
-    *this = other;
-}
+Squad::Squad(Squad const& other) { *this = other; }
 
-void Squad::operator=(Squad const& other)
+Squad& Squad::operator=(Squad const& other)
 {
     destroyUnits();
     m_size = other.m_size;
     m_units = new ISpaceMarine*[m_size];
     for (int i = 0; i < m_size; i++)
         m_units[i] = other.m_units[i]->clone();
+    return *this;
 }
 
-Squad::~Squad()
-{
-    destroyUnits();
-}
+Squad::~Squad() { destroyUnits(); }
 
-int Squad::getCount() const
-{
-    return m_size;
-}
+int Squad::getCount() const { return m_size; }
 
 ISpaceMarine* Squad::getUnit(int n) const
 {

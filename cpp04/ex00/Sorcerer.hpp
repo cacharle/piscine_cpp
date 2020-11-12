@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:27:26 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 20:58:46 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 12:51:45 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 class Sorcerer
 {
 public:
-    Sorcerer(std::string name, std::string title);
-    void operator=(Sorcerer const& other);
+    Sorcerer(std::string const& name, std::string const& title);
+    Sorcerer& operator=(Sorcerer const& other);
     Sorcerer(Sorcerer const& other);
     ~Sorcerer();
 
-    std::string const& getName() const;
-    std::string const& getTitle() const;
+    std::string const& getName()    const;
+    std::string const& getTitle()   const;
     void polymorph(Victim const& v) const;
 
 private:

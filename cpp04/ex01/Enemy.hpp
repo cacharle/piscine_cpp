@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:23:40 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 14:13:07 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 13:55:07 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Enemy
 {
 public:
     Enemy(Enemy const& other);
-    void operator=(Enemy const& other);
+    Enemy& operator=(Enemy const& other);
     virtual ~Enemy();
 
     Enemy(int hp, std::string const& type);
@@ -30,10 +30,11 @@ public:
     virtual void takeDamage(int amount);
 
 protected:
-    Enemy();
-
-    int m_hp;
+    int         m_hp;
     std::string m_type;
+
+private:
+    Enemy();
 };
 
 #endif

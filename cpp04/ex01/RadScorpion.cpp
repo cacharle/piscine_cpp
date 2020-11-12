@@ -6,27 +6,26 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:36:11 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 13:37:54 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 13:55:44 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RadScorpion.hpp"
 
-RadScorpion::RadScorpion()
-    : Enemy(80, "RadScorpion")
+RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
 {
     std::cout << "* click click click *" << std::endl;
 }
 
-RadScorpion::RadScorpion(RadScorpion const& other)
+RadScorpion::RadScorpion(RadScorpion const& other) : Enemy(other)
 {
-    *this = other;
     std::cout << "* click click click *" << std::endl;
 }
 
-void RadScorpion::operator=(RadScorpion const& other)
+RadScorpion& RadScorpion::operator=(RadScorpion const& other)
 {
     Enemy::operator=(other);
+    return *this;
 }
 
 RadScorpion::~RadScorpion()

@@ -6,13 +6,14 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:07:57 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 15:28:02 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:39:26 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SQUAD_HPP
 # define SQUAD_HPP
 
+# include <cstdlib>
 # include "ISquad.hpp"
 # include "ISpaceMarine.hpp"
 
@@ -21,7 +22,7 @@ class Squad : public ISquad
 public:
     Squad();
     Squad(Squad const& other);
-    void operator=(Squad const& other);
+    Squad& operator=(Squad const& other);
     virtual ~Squad();
 
     virtual int getCount() const;

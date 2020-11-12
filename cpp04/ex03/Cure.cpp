@@ -6,34 +6,25 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:38:01 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 17:41:32 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:43:44 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure")
-{
-}
+Cure::Cure() : AMateria("cure") {}
 
-Cure::Cure(Cure const& other)
-{
-    *this = other;
-}
+Cure::Cure(Cure const& other) { *this = other; }
 
-void Cure::operator=(Cure const& other)
+Cure& Cure::operator=(Cure const& other)
 {
     AMateria::operator=(other);
+    return *this;
 }
 
-Cure::~Cure()
-{
-}
+Cure::~Cure() {}
 
-AMateria* Cure::clone() const
-{
-    return new Cure(*this);
-}
+AMateria* Cure::clone() const { return new Cure(*this); }
 
 void Cure::use(ICharacter& target)
 {

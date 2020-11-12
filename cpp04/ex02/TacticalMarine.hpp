@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:30:48 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 15:34:12 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:38:03 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class TacticalMarine : public ISpaceMarine
 public:
     TacticalMarine();
     TacticalMarine(TacticalMarine const& other);
-    void operator=(TacticalMarine const& other);
+    TacticalMarine& operator=(TacticalMarine const& other);
     virtual ~TacticalMarine();
 
     virtual ISpaceMarine* clone() const;

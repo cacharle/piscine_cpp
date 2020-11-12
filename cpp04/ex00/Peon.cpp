@@ -6,27 +6,24 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:53:16 by charles           #+#    #+#             */
-/*   Updated: 2020/04/13 21:00:23 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 13:01:42 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
 
-Peon::Peon(std::string name):
-    Victim(name)
+Peon::Peon(std::string const& name) : Victim(name)
 {
     std::cout << "Zog zog." << std::endl;
 }
 
-void Peon::operator=(Peon const& other)
+Peon& Peon::operator=(Peon const& other)
 {
-    m_name = other.m_name;
+    Victim::operator=(other);
+    return *this;
 }
 
-Peon::Peon(Peon const& other)
-    : Victim(other)
-{
-}
+Peon::Peon(Peon const& other) : Victim(other) {}
 
 Peon::~Peon()
 {

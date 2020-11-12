@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:47:06 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 15:51:46 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:37:48 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ AssaultTerminator::AssaultTerminator()
     std::cout << "* teleports from space *" << std::endl;
 }
 
-AssaultTerminator::AssaultTerminator(AssaultTerminator const& other)
-{
-    *this = other;
-}
+AssaultTerminator::AssaultTerminator(AssaultTerminator const& other) { *this = other; }
 
-void AssaultTerminator::operator=(AssaultTerminator const& other)
+AssaultTerminator& AssaultTerminator::operator=(AssaultTerminator const& other)
 {
     (void)other;
+    return *this;
 }
 
 AssaultTerminator::~AssaultTerminator()

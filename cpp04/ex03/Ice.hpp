@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:31:34 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 17:38:30 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:44:31 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria
 public:
     Ice();
     Ice(Ice const& other);
-    void operator=(Ice const& other);
+    Ice& operator=(Ice const& other);
     ~Ice();
 
     virtual AMateria* clone() const;

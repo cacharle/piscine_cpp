@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:44:43 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 17:31:49 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 15:42:43 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character : public ICharacter
 public:
     Character();
     Character(Character const& other);
-    void operator=(Character const& other);
+    Character& operator=(Character const& other);
     virtual ~Character();
 
     Character(std::string const& name);
@@ -32,8 +32,8 @@ public:
     virtual void use(int idx, ICharacter& target);
 
 private:
-    AMateria* m_inventory[INVENTORY_MAX_SIZE];
-    int m_inventory_size;
+    AMateria*   m_inventory[INVENTORY_MAX_SIZE];
+    int         m_inventory_size;
     std::string m_name;
 };
 

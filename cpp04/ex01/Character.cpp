@@ -6,29 +6,26 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:44:35 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 14:13:39 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/12 14:28:26 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(Character const& other)
+Character::Character(std::string const& name) :
+    m_name(name), m_ap(40), m_weapon(NULL) {}
+
+Character::Character(Character const& other) { *this = other; }
+
+Character& Character::operator=(Character const& other)
 {
-    *this = other;
+    m_name   = other.m_name;
+    m_ap     = other.m_ap;
+    m_weapon = other.m_weapon;
+    return *this;
 }
 
-void Character::operator=(Character const& other)
-{
-    m_name = other.m_name;
-}
-
-Character::~Character()
-{
-}
-
-Character::Character(std::string const& name) : m_name(name), m_ap(40), m_weapon(NULL)
-{
-}
+Character::~Character() {}
 
 void Character::recoverAP()
 {
@@ -54,20 +51,9 @@ void Character::attack(Enemy *enemy)
     m_ap -= m_weapon->getAPCost();
 }
 
-std::string const& Character::getName() const
-{
-    return m_name;
-}
-
-int Character::getAP() const
-{
-    return m_ap;
-}
-
-AWeapon* Character::getWeapon() const
-{
-    return m_weapon;
-}
+std::string const& Character::getName()   const { return m_name;   }
+int                Character::getAP()     const { return m_ap;     }
+AWeapon*           Character::getWeapon() const { return m_weapon; }
 
 std::ostream& operator<<(std::ostream& out, Character const& c)
 {
