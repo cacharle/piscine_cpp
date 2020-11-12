@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 15:20:45 by charles           #+#    #+#             */
-/*   Updated: 2020/11/11 06:39:00 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 08:43:44 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class ClapTrap
 {
 public:
-	ClapTrap();
 	ClapTrap(std::string const& name);
 	ClapTrap(ClapTrap const& other);
 	ClapTrap& operator=(ClapTrap const& other);
@@ -41,6 +40,8 @@ protected:
     unsigned int m_meleeAttackDamage;
     unsigned int m_rangedAttackDamage;
     unsigned int m_armorDamageReduction;
+
+	ClapTrap();
 };
 
 #endif

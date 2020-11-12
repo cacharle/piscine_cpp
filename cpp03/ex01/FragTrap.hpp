@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:17:16 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/10 14:12:49 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 08:40:53 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class FragTrap
 {
 public:
-	FragTrap();
 	FragTrap(std::string const& name);
 	FragTrap(FragTrap const& other);
 	FragTrap& operator=(FragTrap const& other);
@@ -42,6 +41,8 @@ private:
     unsigned int m_meleeAttackDamage;
     unsigned int m_rangedAttackDamage;
     unsigned int m_armorDamageReduction;
+
+	FragTrap();
 };
 
 #endif

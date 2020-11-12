@@ -6,13 +6,13 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:41:27 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/11 06:55:12 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 10:40:11 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <fstream>
-#include <ctime>
+#include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
@@ -30,64 +30,144 @@ int main(void)
         seed = time(NULL);
 	srand(seed);
 
-    FragTrap ft("bob");
-    std::cout << "=== ATTACK ===" << std::endl;
-    ft.rangedAttack("a dog");
-    ft.meleeAttack("a cat");
-    std::cout << std::endl << "=== DAMAGE ===" << std::endl;
-    ft.takeDamage(0);
-    ft.beRepaired(0);
-    ft.takeDamage(10);
-    ft.beRepaired(10);
-    std::cout << std::endl << "=== VAULTHUNTER ===" << std::endl;
-    ft.vaulthunter_dot_exe("your mom");
-    ft.vaulthunter_dot_exe("your dad");
-    ft.vaulthunter_dot_exe("your brother");
-    ft.vaulthunter_dot_exe("your sister");
-    std::cout << "=== VAULTHUNTER NO ENERGY ===" << std::endl;
-    ft.vaulthunter_dot_exe("your grandma");
-    std::cout << std::endl << "=== OVER LIMIT ===" << std::endl;
-    ft.takeDamage(1000);
-    ft.beRepaired(1000);
-
-    std::cout << std::endl << std::endl;
-
-    ScavTrap scav("jean");
-    std::cout << "=== ATTACK ===" << std::endl;
-    scav.rangedAttack("a dog");
-    scav.meleeAttack("a cat");
-    std::cout << std::endl << "=== DAMAGE ===" << std::endl;
-    scav.takeDamage(0);
-    scav.beRepaired(0);
-    scav.takeDamage(10);
-    scav.beRepaired(10);
-    std::cout << std::endl << "=== CHALLENGE NEW COMER ===" << std::endl;
-    scav.challengeNewcomer("your mom");
-    scav.challengeNewcomer("your dad");
-    scav.challengeNewcomer("your brother");
-    scav.challengeNewcomer("your sister");
-    scav.challengeNewcomer("your grandma");
-    std::cout << std::endl << "=== OVER LIMIT ===" << std::endl;
-    scav.takeDamage(1000);
-    scav.beRepaired(1000);
-
-    std::cout << std::endl << std::endl;
+    {
+        std::cout << "============================== FRAG TRAP ==============================" << std::endl;
+        FragTrap ft("Fragger");
+        std::cout << "################################################## ATTACKS" << std::endl;
+        ft.rangedAttack("a dog");
+        ft.meleeAttack("a cat");
+        std::cout << "################################################## DAMAGE" << std::endl;
+        ft.takeDamage(0);
+        ft.beRepaired(0);
+        ft.takeDamage(10);
+        ft.beRepaired(10);
+        ft.takeDamage(60);
+        ft.beRepaired(20);
+        ft.beRepaired(40);
+        std::cout << "################################################## DAMAGE OVERFLOW" << std::endl;
+        ft.takeDamage(110);
+        ft.beRepaired(110);
+        {
+            std::cout << "################################################## COPY CONSTRUCTOR" << std::endl;
+            FragTrap ft2(ft);
+        }
+        {
+            std::cout << "################################################## OPERATOR=" << std::endl;
+            FragTrap ft3("foo");
+            ft3 = ft;
+        }
+        std::cout << "################################################## VAULTHUNTER" << std::endl;
+        ft.vaulthunter_dot_exe("your mom");
+        ft.vaulthunter_dot_exe("your dad");
+        ft.vaulthunter_dot_exe("your brother");
+        ft.vaulthunter_dot_exe("your sister");
+        std::cout << "################################################## VAULTHUNTER NO ENERGY" << std::endl;
+        ft.vaulthunter_dot_exe("your grandma");
+        std::cout << "################################################## DESTRUCTOR" << std::endl;
+    }
 
     std::cout << std::endl;
-    NinjaTrap ninja("didier");
-    std::cout << "=== ATTACK ===" << std::endl;
-    ninja.rangedAttack("a dog");
-    ninja.meleeAttack("a cat");
-    std::cout << std::endl << "=== DAMAGE ===" << std::endl;
-    ninja.takeDamage(10);
-    ninja.beRepaired(10);
-    std::cout << std::endl << "=== SHOE BOX ===" << std::endl;
-    ninja.ninjaShoebox(ninja);
-    ninja.ninjaShoebox(ft);
-    ninja.ninjaShoebox(scav);
-    ninja.ninjaShoebox(ClapTrap("oui"));
-    std::cout << std::endl << "=== OVER LIMIT ===" << std::endl;
-    ninja.takeDamage(1000);
-    ninja.beRepaired(1000);
+
+    {
+        std::cout << "============================== SCAV TRAP ==============================" << std::endl;
+        ScavTrap sv("Scaved");
+        std::cout << "################################################## ATTACKS" << std::endl;
+        sv.rangedAttack("a dog");
+        sv.meleeAttack("a cat");
+        std::cout << "################################################## DAMAGE" << std::endl;
+        sv.takeDamage(0);
+        sv.beRepaired(0);
+        sv.takeDamage(10);
+        sv.beRepaired(10);
+        sv.takeDamage(60);
+        sv.beRepaired(20);
+        sv.beRepaired(40);
+        std::cout << "################################################## DAMAGE OVERFLOW" << std::endl;
+        sv.takeDamage(110);
+        sv.beRepaired(110);
+        {
+            std::cout << "################################################## COPY CONSTRUCTOR" << std::endl;
+            ScavTrap sv2(sv);
+        }
+        {
+            std::cout << "################################################## OPERATOR=" << std::endl;
+            ScavTrap sv3("foo");
+            sv3 = sv;
+        }
+        std::cout << "################################################## CHALLENGE NEW COMER" << std::endl;
+        sv.challengeNewcomer("your mom");
+        sv.challengeNewcomer("your dad");
+        sv.challengeNewcomer("your brother");
+        sv.challengeNewcomer("your sister");
+        sv.challengeNewcomer("your grandma");
+        std::cout << "################################################## DESTRUCTOR" << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    {
+        std::cout << "============================== CLAP TRAP ==============================" << std::endl;
+        ClapTrap cl("Clapped");
+        std::cout << "################################################## ATTACKS" << std::endl;
+        cl.rangedAttack("a dog");
+        cl.meleeAttack("a cat");
+        std::cout << "################################################## DAMAGE" << std::endl;
+        cl.takeDamage(0);
+        cl.beRepaired(0);
+        cl.takeDamage(10);
+        cl.beRepaired(10);
+        cl.takeDamage(60);
+        cl.beRepaired(20);
+        cl.beRepaired(40);
+        std::cout << "################################################## DAMAGE OVERFLOW" << std::endl;
+        cl.takeDamage(110);
+        cl.beRepaired(110);
+        {
+            std::cout << "################################################## COPY CONSTRUCTOR" << std::endl;
+            ClapTrap cl2(cl);
+        }
+        {
+            std::cout << "################################################## OPERATOR=" << std::endl;
+            ClapTrap cl3("foo");
+            cl3 = cl;
+        }
+        std::cout << "################################################## DESTRUCTOR" << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    {
+        std::cout << "============================== NINJA TRAP ==============================" << std::endl;
+        NinjaTrap ni("Ninjer");
+        std::cout << "################################################## ATTACKS" << std::endl;
+        ni.rangedAttack("a dog");
+        ni.meleeAttack("a cat");
+        std::cout << "################################################## DAMAGE" << std::endl;
+        ni.takeDamage(0);
+        ni.beRepaired(0);
+        ni.takeDamage(10);
+        ni.beRepaired(10);
+        ni.takeDamage(60);
+        ni.beRepaired(20);
+        ni.beRepaired(40);
+        std::cout << "################################################## DAMAGE OVERFLOW" << std::endl;
+        ni.takeDamage(110);
+        ni.beRepaired(110);
+        {
+            std::cout << "################################################## COPY CONSTRUCTOR" << std::endl;
+            NinjaTrap ni2(ni);
+        }
+        {
+            std::cout << "################################################## OPERATOR=" << std::endl;
+            NinjaTrap ni3("foo");
+            ni3 = ni;
+        }
+        std::cout << "################################################## SHOE BOX" << std::endl;
+        ni.ninjaShoebox(FragTrap("Innocent_frag_trap"));
+        ni.ninjaShoebox(ScavTrap("Anoying_scav_trap"));
+        ni.ninjaShoebox(NinjaTrap("Fellow_intelectual"));
+        ni.ninjaShoebox(ClapTrap("Basic_clap"));
+        std::cout << "################################################## DESTRUCTOR" << std::endl;
+    }
 	return 0;
 }

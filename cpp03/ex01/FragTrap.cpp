@@ -6,25 +6,11 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:20:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/10 14:12:57 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 10:44:08 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-
-FragTrap::FragTrap():
-    m_hitPoints(100),
-    m_maxHitPoints(100),
-    m_energyPoints(100),
-    m_maxEnergyPoints(100),
-    m_level(1),
-    m_name(""),
-    m_meleeAttackDamage(30),
-    m_rangedAttackDamage(20),
-    m_armorDamageReduction(5)
-{
-	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
-}
 
 FragTrap::FragTrap(std::string const& name):
     m_hitPoints(100),
@@ -42,6 +28,7 @@ FragTrap::FragTrap(std::string const& name):
 
 FragTrap::FragTrap(FragTrap const& other)
 {
+	std::cout << "FR4G-TP New from " << other.m_name << std::endl;
     *this = other;
 }
 
@@ -112,7 +99,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const& target)
     }
     std::string attacks[5] = {
         "boum boum",
-        "cursed for generation",
+        "cursed for generations",
         "sit and wait for your death",
         "mimic a gun with his hand and make 'piou piou' sound",
         "shot you in the face"
@@ -122,3 +109,5 @@ void FragTrap::vaulthunter_dot_exe(std::string const& target)
               << " with " << attacks[rand() % 5] << std::endl;
     m_energyPoints -= 25;
 }
+
+FragTrap::FragTrap() {}

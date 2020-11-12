@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:11:51 by charles           #+#    #+#             */
-/*   Updated: 2020/11/10 14:13:16 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 10:48:39 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class ScavTrap
 {
 public:
-    ScavTrap();
     ScavTrap(std::string const& name);
     ScavTrap(ScavTrap const& other);
     ScavTrap& operator=(ScavTrap const& other);
@@ -38,10 +37,12 @@ private:
     unsigned int m_energyPoints;
     unsigned int m_maxEnergyPoints;
     unsigned int m_level;
-    std::string m_name;
+    std::string  m_name;
     unsigned int m_meleeAttackDamage;
     unsigned int m_rangedAttackDamage;
     unsigned int m_armorDamageReduction;
+
+    ScavTrap();
 };
 
 #endif

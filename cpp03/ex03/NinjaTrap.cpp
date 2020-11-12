@@ -6,23 +6,11 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 17:33:00 by charles           #+#    #+#             */
-/*   Updated: 2020/11/11 06:49:09 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 10:07:47 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
-
-NinjaTrap::NinjaTrap() : ClapTrap()
-{
-    m_hitPoints            = 60;
-    m_maxHitPoints         = 60;
-    m_energyPoints         = 120;
-    m_maxEnergyPoints      = 120;
-    m_meleeAttackDamage    = 60;
-    m_rangedAttackDamage   = 5;
-    m_armorDamageReduction = 0;
-	std::cout <<  "NINJ4-TP New " << m_name << ": your gaming references suck" << std::endl;
-}
 
 NinjaTrap::NinjaTrap(std::string const& name) : ClapTrap(name)
 {
@@ -30,27 +18,21 @@ NinjaTrap::NinjaTrap(std::string const& name) : ClapTrap(name)
     m_maxHitPoints         = 60;
     m_energyPoints         = 120;
     m_maxEnergyPoints      = 120;
+    m_level                = 1;
     m_meleeAttackDamage    = 60;
     m_rangedAttackDamage   = 5;
     m_armorDamageReduction = 0;
-	std::cout << " NINJ4-TP New " << m_name << ": your gaming references suck" << std::endl;
+	std::cout << "NINJ4-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const& other)
+NinjaTrap::NinjaTrap(NinjaTrap const& other) : ClapTrap(other)
 {
-    *this = other;
+	std::cout << "NINJ4-TP New from "<< other.m_name << std::endl;
 }
 
 NinjaTrap& NinjaTrap::operator=(NinjaTrap const& other)
 {
-    m_hitPoints            = other.m_hitPoints;
-    m_maxHitPoints         = other.m_maxHitPoints;
-    m_energyPoints         = other.m_energyPoints;
-    m_maxEnergyPoints      = other.m_maxEnergyPoints;
-    m_level                = other.m_level;
-    m_meleeAttackDamage    = other.m_meleeAttackDamage;
-    m_rangedAttackDamage   = other.m_rangedAttackDamage;
-    m_armorDamageReduction = other.m_armorDamageReduction;
+    ClapTrap::operator=(other);
     return *this;
 }
 
@@ -86,3 +68,5 @@ void NinjaTrap::ninjaShoebox(ClapTrap const& target)
     std::cout << "NINJ4-TP " << m_name
         << " attack clap trap, ISN'T THAT WHAT YOU WANTED" << std::endl;
 }
+
+NinjaTrap::NinjaTrap() {}

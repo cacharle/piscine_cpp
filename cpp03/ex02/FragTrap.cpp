@@ -6,47 +6,33 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:20:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/11 06:42:32 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 10:07:11 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
-{
-    m_energyPoints         = 100;
-    m_maxEnergyPoints      = 100;
-    m_meleeAttackDamage    = 30;
-    m_rangedAttackDamage   = 20;
-    m_armorDamageReduction = 5;
-	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
-}
-
 FragTrap::FragTrap(std::string const& name) : ClapTrap(name)
 {
+    m_hitPoints            = 100;
+    m_maxHitPoints         = 100;
     m_energyPoints         = 100;
     m_maxEnergyPoints      = 100;
+    m_level                = 1;
     m_meleeAttackDamage    = 30;
     m_rangedAttackDamage   = 20;
     m_armorDamageReduction = 5;
 	std::cout << "FR4G-TP New " << m_name << ": your gaming references suck" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const& other)
+FragTrap::FragTrap(FragTrap const& other) : ClapTrap(other)
 {
-    *this = other;
+	std::cout << "FR4G-TP New from "<< other.m_name << std::endl;
 }
 
 FragTrap& FragTrap::operator=(FragTrap const& other)
 {
-    m_hitPoints            = other.m_hitPoints;
-    m_maxHitPoints         = other.m_maxHitPoints;
-    m_energyPoints         = other.m_energyPoints;
-    m_maxEnergyPoints      = other.m_maxEnergyPoints;
-    m_level                = other.m_level;
-    m_meleeAttackDamage    = other.m_meleeAttackDamage;
-    m_rangedAttackDamage   = other.m_rangedAttackDamage;
-    m_armorDamageReduction = other.m_armorDamageReduction;
+    ClapTrap::operator=(other);
     return *this;
 }
 
@@ -74,3 +60,5 @@ void FragTrap::vaulthunter_dot_exe(std::string const& target)
               << " with " << attacks[rand() % 5] << std::endl;
     m_energyPoints -= 25;
 }
+
+FragTrap::FragTrap() {}

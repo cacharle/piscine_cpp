@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:11:51 by charles           #+#    #+#             */
-/*   Updated: 2020/11/10 14:38:59 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/12 08:45:12 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
 class ScavTrap : public ClapTrap
 {
 public:
-    ScavTrap();
     ScavTrap(std::string const& name);
     ScavTrap(ScavTrap const& other);
     ScavTrap& operator=(ScavTrap const& other);
     ~ScavTrap();
 
     void challengeNewcomer(std::string const& target);
+
+private:
+    ScavTrap();
 };
 
 #endif
