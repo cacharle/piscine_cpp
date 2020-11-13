@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:44:35 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 14:28:26 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 11:51:31 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void Character::equip(AWeapon *weapon)
 
 void Character::attack(Enemy *enemy)
 {
-    if (m_weapon == NULL || m_ap < m_weapon->getAPCost())
+    if (enemy == NULL || m_weapon == NULL || m_ap < m_weapon->getAPCost())
         return;
     std::cout << m_name << " attacks " << enemy->getType() << " with a " << m_weapon->getName() << std::endl;
     m_weapon->attack();
@@ -49,6 +49,8 @@ void Character::attack(Enemy *enemy)
     if (enemy->getHP() <= 0)
         delete enemy;
     m_ap -= m_weapon->getAPCost();
+    if (m_ap < 0)
+        m_ap = 0;
 }
 
 std::string const& Character::getName()   const { return m_name;   }

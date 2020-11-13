@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:07:57 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 15:39:26 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 12:06:51 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ public:
     Squad& operator=(Squad const& other);
     virtual ~Squad();
 
-    virtual int getCount() const;
-    virtual ISpaceMarine* getUnit(int n) const;
-    virtual int push(ISpaceMarine* spaceMarine);
+    virtual int           getCount()                      const;
+    virtual ISpaceMarine* getUnit(int n)                  const;
+    virtual int           push(ISpaceMarine* spaceMarine);
 
 private:
     void destroyUnits();
 
     ISpaceMarine** m_units;
-    int m_size;
+    int            m_size;
 };
 
 #endif

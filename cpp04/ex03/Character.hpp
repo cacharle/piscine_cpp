@@ -6,13 +6,14 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:44:43 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 15:42:43 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 14:17:54 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
+# include <string>
 # include "ICharacter.hpp"
 
 # define INVENTORY_MAX_SIZE 4
@@ -20,7 +21,6 @@
 class Character : public ICharacter
 {
 public:
-    Character();
     Character(Character const& other);
     Character& operator=(Character const& other);
     virtual ~Character();
@@ -35,6 +35,10 @@ private:
     AMateria*   m_inventory[INVENTORY_MAX_SIZE];
     int         m_inventory_size;
     std::string m_name;
+
+    void destroyInventory();
+
+    Character();
 };
 
 #endif

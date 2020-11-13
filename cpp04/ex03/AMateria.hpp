@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:24:00 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 15:41:54 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 14:42:03 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,18 @@ public:
     virtual ~AMateria();
 
     AMateria(std::string const& type);
+
     std::string const& getType() const;
-    unsigned int getXP() const;
+    unsigned int       getXP()   const;
 
     virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter& target);
+    virtual void      use(ICharacter& target);
 
 protected:
     AMateria();
 
-    std::string m_type;
-    unsigned int _xp;  // subject force _xp instead of m_xp
+    std::string  m_type;
+    unsigned int _xp;  // subject force _xp
 };
 
 #endif

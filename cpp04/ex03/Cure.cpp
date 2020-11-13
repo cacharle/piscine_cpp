@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:38:01 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 15:43:44 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 14:09:58 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ AMateria* Cure::clone() const { return new Cure(*this); }
 void Cure::use(ICharacter& target)
 {
     std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    AMateria::use(target);
 }

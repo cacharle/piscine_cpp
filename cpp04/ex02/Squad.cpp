@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:08:35 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 15:38:55 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 12:13:57 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Squad::Squad() : m_units(new ISpaceMarine*[0]), m_size(0) {}
 
-Squad::Squad(Squad const& other) { *this = other; }
+Squad::Squad(Squad const& other) : m_units(NULL), m_size(0) { *this = other; }
 
 Squad& Squad::operator=(Squad const& other)
 {
     destroyUnits();
-    m_size = other.m_size;
+    m_size  = other.m_size;
     m_units = new ISpaceMarine*[m_size];
     for (int i = 0; i < m_size; i++)
         m_units[i] = other.m_units[i]->clone();
@@ -57,6 +57,8 @@ int Squad::push(ISpaceMarine* spaceMarine)
 
 void Squad::destroyUnits()
 {
+    if (m_units == NULL)
+        return;
     for (int i = 0; i < m_size; i++)
         delete m_units[i];
     delete [] m_units;

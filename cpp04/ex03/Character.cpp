@@ -6,20 +6,18 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:45:54 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 15:43:14 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 14:20:50 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character() : m_name(""), m_inventory_size(0) {}
-
-Character::Character(Character const& other) { *this = other; }
+Character::Character(Character const& other)
+    : m_inventory_size(0) { *this = other; }
 
 Character& Character::operator=(Character const& other)
 {
-    for (int i = 0; i < m_inventory_size; i++)
-        delete m_inventory[i];
+    destroyInventory();
     m_inventory_size = other.m_inventory_size;
     for (int i = 0; i < m_inventory_size; i++)
         m_inventory[i] = other.m_inventory[i]->clone();
@@ -27,11 +25,7 @@ Character& Character::operator=(Character const& other)
     return *this;
 }
 
-Character::~Character()
-{
-    for (int i = 0; i < m_inventory_size; i++)
-        delete m_inventory[i];
-}
+Character::~Character() { destroyInventory(); }
 
 Character::Character(std::string const& name) : m_name(name), m_inventory_size(0) {}
 
@@ -60,3 +54,11 @@ void Character::use(int idx, ICharacter& target)
         return;
     m_inventory[idx]->use(target);
 }
+
+void Character::destroyInventory()
+{
+    for (int i = 0; i < m_inventory_size; i++)
+        delete m_inventory[i];
+}
+
+Character::Character() {}

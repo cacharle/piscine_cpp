@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:29:53 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 13:50:54 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 11:42:08 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     SuperMutant();
     SuperMutant(SuperMutant const& other);
     SuperMutant& operator=(SuperMutant const& other);
-    ~SuperMutant();
+    virtual ~SuperMutant();
 
     virtual void takeDamage(int amount);
 

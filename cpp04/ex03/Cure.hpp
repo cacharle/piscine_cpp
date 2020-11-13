@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:37:11 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 15:43:24 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 14:09:18 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
     ~Cure();
 
     virtual AMateria* clone() const;
-    virtual void use(ICharacter& target);
+    virtual void      use(ICharacter& target);
 private:
 };
 

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:30:47 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 13:54:19 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 10:35:24 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ SuperMutant::~SuperMutant()
 
 void SuperMutant::takeDamage(int amount)
 {
+    if (amount < 0)
+        amount = 3;
     Enemy::takeDamage(amount - 3);
 }

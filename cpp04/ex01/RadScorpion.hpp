@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:35:04 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 14:24:38 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/13 11:41:55 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     RadScorpion();
     RadScorpion(RadScorpion const& other);
     RadScorpion& operator=(RadScorpion const& other);
-    ~RadScorpion();
+    virtual ~RadScorpion();
 
 private:
 };
