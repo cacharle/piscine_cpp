@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:32:27 by charles           #+#    #+#             */
-/*   Updated: 2020/11/13 14:06:33 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/15 17:22:00 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::Ice() : AMateria("ice") {}
 
-Ice::Ice(Ice const& other) : AMateria(other) {}
+Ice::Ice(Ice const& other) : AMateria("ice") { *this = other; }
 
 Ice& Ice::operator=(Ice const& other)
 {

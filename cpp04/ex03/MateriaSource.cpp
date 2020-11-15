@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:19:10 by charles           #+#    #+#             */
-/*   Updated: 2020/11/13 14:40:54 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/15 17:22:19 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ MateriaSource::~MateriaSource() { destroyLearned(); }
 
 void MateriaSource::learnMateria(AMateria* materia)
 {
-    if (m_learned_size >= 4)
+    if (m_learned_size >= 4 || materia == NULL)
         return;
     m_learned[m_learned_size] = materia->clone();
     m_learned_size++;

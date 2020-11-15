@@ -6,11 +6,14 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:45:54 by charles           #+#    #+#             */
-/*   Updated: 2020/11/13 14:20:50 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/15 17:10:46 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+
+Character::Character(std::string const& name)
+    : m_name(name), m_inventory_size(0) {}
 
 Character::Character(Character const& other)
     : m_inventory_size(0) { *this = other; }
@@ -27,13 +30,11 @@ Character& Character::operator=(Character const& other)
 
 Character::~Character() { destroyInventory(); }
 
-Character::Character(std::string const& name) : m_name(name), m_inventory_size(0) {}
-
 std::string const& Character::getName() const { return m_name; }
 
 void Character::equip(AMateria* m)
 {
-    if (m_inventory_size >= INVENTORY_MAX_SIZE)
+    if (m_inventory_size >= INVENTORY_MAX_SIZE || m == NULL)
         return;
     m_inventory[m_inventory_size] = m;
     m_inventory_size++;
