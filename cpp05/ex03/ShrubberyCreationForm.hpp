@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonFrom.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 13:42:46 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 12:57:57 by cacharle         ###   ########.fr       */
+/*   Created: 2020/10/19 13:43:27 by cacharle          #+#    #+#             */
+/*   Updated: 2020/11/17 16:37:56 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFROM_HPP
-# define PRESIDENTIALPARDONFROM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
+# include <string>
+# include <cstring>
+# include <fstream>
+# include <iostream>
 # include "Form.hpp"
 
-class PresidentialPardonFrom : public Form
+class ShrubberyCreationForm : public Form
 {
 public:
-    PresidentialPardonFrom(const PresidentialPardonFrom& other);
-    PresidentialPardonFrom& operator=(const PresidentialPardonFrom& other);
-    ~PresidentialPardonFrom();
+    ShrubberyCreationForm(const ShrubberyCreationForm& other);
+    ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
+    ~ShrubberyCreationForm();
 
-    PresidentialPardonFrom(std::string const& target);
+    ShrubberyCreationForm(std::string const& target);
 
 private:
-    PresidentialPardonFrom();
+    ShrubberyCreationForm();
     virtual void executeUnsafe() const;
 
     std::string m_target;

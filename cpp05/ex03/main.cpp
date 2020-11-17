@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:13:05 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 17:50:20 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/17 19:02:02 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -237,5 +238,18 @@ int main()
         catch (std::exception& e) { std::cout << e.what() << std::endl;  }
     }
 
+    std::cout << std::endl;
+    {
+        std::cout << "================= INTERN              =================" << std::endl;
+        Intern in;
+        Form *sh = in.makeForm("shrubbery creation",  "yo");
+        Form *pr = in.makeForm("presidential pardon", "ya");
+        Form *ro = in.makeForm("robotomy request",    "yu");
+        Form *nu = in.makeForm("foo",    "yu");
+        std::cout << nu << std::endl;
+        std::cout << *sh;
+        std::cout << *pr;
+        std::cout << *ro;
+    }
     return 0;
 }
