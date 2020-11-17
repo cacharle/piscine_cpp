@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:04:32 by charles           #+#    #+#             */
-/*   Updated: 2020/10/19 13:26:06 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 10:28:41 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,18 @@ public:
     ~Bureaucrat();
 
     Bureaucrat(std::string const& name, int grade);
-    std::string const& getName() const;
-    int getGrade() const;
-    void incrementGrade();
-    void decrementGrade();
+
+    std::string const& getName()  const;
+    int                getGrade() const;
+    void               incrementGrade();
+    void               decrementGrade();
+
+private:
+    Bureaucrat();
+    void checkGrade();
+
+    std::string m_name;
+    int         m_grade;
 
     class GradeTooHighException : public std::exception
     {
@@ -35,7 +43,7 @@ public:
         GradeTooHighException();
         GradeTooHighException(GradeTooHighException const& other);
         GradeTooHighException& operator=(GradeTooHighException const& other);
-        ~GradeTooHighException();
+        ~GradeTooHighException() throw();
         virtual char const* what() const throw();
     };
 
@@ -45,15 +53,10 @@ public:
         GradeTooLowException();
         GradeTooLowException(GradeTooLowException const& other);
         GradeTooLowException& operator=(GradeTooLowException const& other);
-        ~GradeTooLowException();
+        ~GradeTooLowException() throw();
         virtual char const* what() const throw();
     };
 
-private:
-    Bureaucrat();
-
-    std::string const m_name;
-    int m_grade;
 };
 
 std::ostream& operator<<(std::ostream& out, Bureaucrat const& b);

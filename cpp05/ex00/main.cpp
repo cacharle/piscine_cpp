@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:13:05 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 18:43:15 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/17 11:51:33 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,24 @@
 
 int main()
 {
-    Bureaucrat a("jean", 140);
-    Bureaucrat b("didier", 10);
+    std::cout << "############### CREATION" << std::endl;
+    try                       { Bureaucrat bu("YO", 0);             }
+    catch (std::exception& e) { std::cout << e.what() << std::endl; }
+    try                       { Bureaucrat bu("YO2", 151);          }
+    catch (std::exception& e) { std::cout << e.what() << std::endl; }
 
+    Bureaucrat yep("YEP", 1);
+    Bureaucrat yep2(yep);
+    Bureaucrat yep3("SHOULD NOT BE PRINTED", 42);
+    yep3 = yep;
+    std::cout << yep;
+    std::cout << yep2;
+    std::cout << yep3;
+
+
+    std::cout << std::endl;
+    std::cout << "############### DECREMENT" << std::endl;
+    Bureaucrat a("jean", 140);
     while (true)
     {
         try
@@ -31,6 +46,9 @@ int main()
         }
     }
 
+    std::cout << std::endl;
+    std::cout << "############### INCREMENT" << std::endl;
+    Bureaucrat b("didier", 10);
     while (true)
     {
         try
@@ -44,5 +62,6 @@ int main()
             break;
         }
     }
+
     return 0;
 }

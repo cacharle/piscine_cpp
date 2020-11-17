@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 13:43:37 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 13:27:32 by cacharle         ###   ########.fr       */
+/*   Created: 2020/11/17 13:39:59 by cacharle          #+#    #+#             */
+/*   Updated: 2020/11/17 13:48:08 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
-# include "Form.hpp"
-
-class RobotomyRequestForm : public Form
+class Intern
 {
 public:
-    RobotomyRequestForm(const RobotomyRequestForm& other);
-    RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
-    ~RobotomyRequestForm();
+    Intern();
+    Intern(const Intern& other);
+    Intern& operator=(const Intern& other);
+    ~Intern();
 
-    RobotomyRequestForm(std::string const& target);
-
+    Form *makeForm(std::string const& name, std::string const& target);
 private:
-    RobotomyRequestForm();
-    virtual void executeUnsafe() const;
-
-    std::string m_target;
 };
 
 #endif

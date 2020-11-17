@@ -6,26 +6,46 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:45:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/10/19 13:55:53 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 13:23:52 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const& target)
+    : Form("shrubbery creation", 145, 137), m_target(target) {}
+
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
-    : m_target(other.m_target)
-{}
+    : Form(other) { *this = other; }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
 {
-    Form::operator=(*this, other);
+    Form::operator=(other);
     m_target = other.m_target;
     return *this;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const& target)
-    m_target(target) {}
+void ShrubberyCreationForm::executeUnsafe() const
+{
+    std::ofstream file(m_target + "_shrubbery");
+    if (!file.is_open())
+    {
+        std::cerr << "Error: " << m_target + "_shrubbery" << ": " << std::strerror(errno) << std::endl;
+        return;
+    }
+    file <<
+        "              ##              "
+        "             ####             "
+        "            ######            "
+        "          ##########          "
+        "        ##############        "
+        "       ######ntm#######       "
+        "     ###################      "
+        "    #####################     "
+        "            |___|             ";
+    file.close();
+}
 
-ShrubberyCreationForm::ShrubberyCreationForm() : m_target("") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("", 0, 0) {}

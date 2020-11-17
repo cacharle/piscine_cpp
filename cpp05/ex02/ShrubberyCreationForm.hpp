@@ -6,7 +6,7 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:43:27 by cacharle          #+#    #+#             */
-/*   Updated: 2020/10/19 13:46:42 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 13:08:33 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <string>
+# include <fstream>
 # include "Form.hpp"
 
 class ShrubberyCreationForm : public Form
@@ -27,6 +28,7 @@ public:
 
 private:
     ShrubberyCreationForm();
+    virtual void executeUnsafe() const;
 
     std::string m_target;
 };
