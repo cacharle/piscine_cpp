@@ -6,7 +6,7 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:43:27 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 13:08:33 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:37:56 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <string>
+# include <cstring>
 # include <fstream>
+# include <iostream>
 # include "Form.hpp"
 
 class ShrubberyCreationForm : public Form

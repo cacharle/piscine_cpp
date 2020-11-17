@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:47:21 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 10:33:18 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:43:26 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ int main()
         devRandom.close();
     }
     else
+    {
         seed = time(NULL);
+    }
 	srand(seed);
 	zevent.setZombieType("NotRandom");
 	z = zevent.newZombie("jean");

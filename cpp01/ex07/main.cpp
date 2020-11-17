@@ -6,13 +6,14 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/02 17:08:28 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/10 09:25:28 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:37:34 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <fstream>
-# include <string>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstring>
 
 int main(int argc, char **argv)
 {

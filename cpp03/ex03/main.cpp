@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:41:27 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/12 10:40:11 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:49:18 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int main(void)
         devRandom.close();
     }
     else
+    {
         seed = time(NULL);
+    }
 	srand(seed);
 
     {

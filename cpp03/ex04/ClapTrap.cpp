@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 15:28:43 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 10:08:15 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:49:36 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ void ClapTrap::takeDamage(unsigned int amount)
     if (amount < m_armorDamageReduction)
         amount = 0;
     else
+    {
         amount -= m_armorDamageReduction;
+    }
 	if (amount > m_hitPoints)
         amount = m_hitPoints;
 	m_hitPoints -= amount;

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 14:15:03 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 10:49:48 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:47:57 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,17 @@ void ScavTrap::meleeAttack(std::string const& target) const
 void ScavTrap::takeDamage(unsigned int amount)
 {
     if (amount < m_armorDamageReduction)
+    {
         amount = 0;
+    }
     else
+    {
         amount -= m_armorDamageReduction;
+    }
 	if (amount > m_hitPoints)
+    {
         amount = m_hitPoints;
+    }
 	m_hitPoints -= amount;
 	std::cout << "SC4V-TP " << m_name
               << " takes "  << amount

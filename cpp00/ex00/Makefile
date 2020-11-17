@@ -6,32 +6,27 @@
 #    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/09 09:16:44 by cacharle          #+#    #+#              #
-#    Updated: 2020/11/09 09:16:45 by cacharle         ###   ########.fr        #
+#    Updated: 2020/11/17 16:41:44 by charles          ###   ########.fr        #
 #                                                                              #
 # ############################################################################ #
 
 RM = rm -f
 
-CC = clang++
-CCFLAGS = -Wall -Wextra -Werror
+CXX = clang++
+CXXFLAGS = -Wall -Wextra -Werror
 
 NAME = megaphone
 SRC = megaphone.cpp
-OBJ = $(SRC:.cpp=.o)
 
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CCFLAGS) -o $@ $^
-
-%.o: %.c
-	$(CC) $(CCFLAGS) -o $@ $<
+$(NAME): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(NAME)
 
 fclean: clean
-	$(RM) $(NAME)
 
 re: fclean all

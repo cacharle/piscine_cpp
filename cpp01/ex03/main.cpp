@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 09:56:14 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 12:54:36 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:44:08 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int main()
         devRandom.close();
     }
     else
+    {
         seed = time(NULL);
+    }
 	srand(seed);
 
     std::cout << "=== Stack horde ===" << std::endl;

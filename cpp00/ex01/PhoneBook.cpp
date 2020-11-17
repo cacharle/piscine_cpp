@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 07:23:13 by charles           #+#    #+#             */
-/*   Updated: 2020/11/09 12:33:21 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:42:33 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ PhoneBook::PhoneBook() : m_size(0) {}
 void PhoneBook::add(Contact contact)
 {
     if (m_size >= CONTACTS_SIZE)
+    {
         return;
+    }
 	m_contacts[m_size] = contact;
 	m_size++;
 }

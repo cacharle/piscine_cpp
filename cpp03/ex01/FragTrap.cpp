@@ -6,7 +6,7 @@
 /*   By: cacharle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 05:20:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/12 10:44:08 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 16:47:41 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,17 @@ void FragTrap::meleeAttack(std::string const& target) const
 void FragTrap::takeDamage(unsigned int amount)
 {
     if (amount < m_armorDamageReduction)
+    {
         amount = 0;
+    }
     else
+    {
         amount -= m_armorDamageReduction;
+    }
 	if (amount > m_hitPoints)
+    {
         amount = m_hitPoints;
+    }
 	m_hitPoints -= amount;
 	std::cout << "FR4G-TP " << m_name
               << " takes " << amount
