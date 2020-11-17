@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:50:35 by charles           #+#    #+#             */
-/*   Updated: 2020/11/13 12:36:22 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 09:32:46 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int main()
         std::cout << "Origin Count: " << s.getCount() << std::endl;
 
         std::cout << "################ ASSIGN" << std::endl;
-        Squad s3;
+        Squad s3(s2);
         s3 = s;
         std::cout << "Copy   Count: " << s3.getCount() << std::endl;
         s3.push(new TacticalMarine());

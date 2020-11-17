@@ -6,14 +6,14 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:45:54 by charles           #+#    #+#             */
-/*   Updated: 2020/11/15 17:10:46 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/17 08:30:21 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(std::string const& name)
-    : m_name(name), m_inventory_size(0) {}
+    : m_inventory_size(0), m_name(name) {}
 
 Character::Character(Character const& other)
     : m_inventory_size(0) { *this = other; }
@@ -44,6 +44,7 @@ void Character::unequip(int idx)
 {
     if (idx < 0 || idx >= m_inventory_size)
         return;
+    delete m_inventory[idx];
     for (int i = idx; i < m_inventory_size - 1; i++)
         m_inventory[i] = m_inventory[i + 1];
     m_inventory_size--;

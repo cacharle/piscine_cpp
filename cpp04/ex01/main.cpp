@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 09:05:58 by charles           #+#    #+#             */
-/*   Updated: 2020/11/13 12:00:52 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 09:16:14 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,8 +215,6 @@ int main()
         c.recoverAP();
         std::cout << c;
         c.attack(r);
-
-        // std::cout << "################ DESTRUCTORS" << std::endl;
     }
 
     return 0;

@@ -6,15 +6,14 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:29:19 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 12:55:36 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 08:45:02 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 
 Sorcerer::Sorcerer(std::string const& name, std::string const& title) :
-    m_name(name),
-    m_title(title)
+    m_name(name), m_title(title)
 {
     std::cout << name << ", " << title << ", is born!" << std::endl;
 }

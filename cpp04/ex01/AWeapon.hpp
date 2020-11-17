@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 11:22:06 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 13:34:13 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 08:53:43 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ protected:
 
 private:
     AWeapon();
-
 };
 
 #endif

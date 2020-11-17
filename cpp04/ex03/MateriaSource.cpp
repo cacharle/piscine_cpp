@@ -6,13 +6,14 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:19:10 by charles           #+#    #+#             */
-/*   Updated: 2020/11/15 17:22:19 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/17 08:32:37 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() : m_learned_size(0) {}
+MateriaSource::MateriaSource()
+    : m_learned_size(0) {}
 
 MateriaSource::MateriaSource(MateriaSource const& other)
     : m_learned_size(0) { *this = other; }
@@ -30,9 +31,12 @@ MateriaSource::~MateriaSource() { destroyLearned(); }
 
 void MateriaSource::learnMateria(AMateria* materia)
 {
-    if (m_learned_size >= 4 || materia == NULL)
+    if (m_learned_size >= LEARNED_MAX_SIZE || materia == NULL)
+    {
+        delete materia;
         return;
-    m_learned[m_learned_size] = materia->clone();
+    }
+    m_learned[m_learned_size] = materia;
     m_learned_size++;
 }
 

@@ -6,15 +6,17 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:08:35 by charles           #+#    #+#             */
-/*   Updated: 2020/11/13 12:13:57 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/11/17 09:25:58 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad() : m_units(new ISpaceMarine*[0]), m_size(0) {}
+Squad::Squad()
+    : m_units(new ISpaceMarine*[0]), m_size(0) {}
 
-Squad::Squad(Squad const& other) : m_units(NULL), m_size(0) { *this = other; }
+Squad::Squad(Squad const& other)
+    : m_units(NULL), m_size(0) { *this = other; }
 
 Squad& Squad::operator=(Squad const& other)
 {
