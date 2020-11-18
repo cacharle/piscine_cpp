@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
+/*   By: charles <me@cacharle.xyz>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/15 09:56:24 by charles           #+#    #+#             */
-/*   Updated: 2020/11/18 09:16:48 by charles          ###   ########.fr       */
+/*   Created: 2020/11/18 09:20:02 by charles           #+#    #+#             */
+/*   Updated: 2020/11/18 09:21:22 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#include "Base.hpp"
 
-class Base
-{
-public:
-    Base();
-    Base(Base const& other);
-    Base& operator=(Base const& other);
-    virtual ~Base();
-};
-
-#endif
+Base::Base() {}
+Base::Base(Base const& other) { (void)other; }
+Base& Base::operator=(Base const& other) { (void)other; return *this; }
+Base::~Base() {}

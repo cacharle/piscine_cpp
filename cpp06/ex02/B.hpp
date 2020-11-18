@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 09:57:12 by charles           #+#    #+#             */
-/*   Updated: 2020/04/15 10:07:52 by charles          ###   ########.fr       */
+/*   Updated: 2020/11/18 09:22:13 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 
 class B : public Base
 {
+public:
+    B();
+    B(B const& other);
+    B& operator=(B const& other);
+    virtual ~B();
 };
 
 #endif

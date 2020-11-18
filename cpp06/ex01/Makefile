@@ -1,21 +1,21 @@
-# **************************************************************************** #
+# ############################################################################ #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+         #
+#    By: charles <me@cacharle.xyz>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/04/15 09:59:30 by charles           #+#    #+#              #
-#    Updated: 2020/11/18 09:22:44 by charles          ###   ########.fr        #
+#    Created: 2020/11/18 09:31:16 by charles           #+#    #+#              #
+#    Updated: 2020/11/18 10:17:03 by charles          ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+# ############################################################################ #
 
-NAME = identify_real_type
+NAME = serialization
 
 CXX = clang++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp A.cpp B.cpp C.cpp Base.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

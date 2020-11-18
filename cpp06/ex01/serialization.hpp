@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
+/*   By: charles <me@cacharle.xyz>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/15 09:56:24 by charles           #+#    #+#             */
-/*   Updated: 2020/11/18 09:16:48 by charles          ###   ########.fr       */
+/*   Created: 2020/11/18 10:22:17 by charles           #+#    #+#             */
+/*   Updated: 2020/11/18 10:22:35 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef SERIALIZATION_HPP
+# define SERIALIZATION_HPP
 
-class Base
+# include <string>
+
+struct RawData
 {
-public:
-    Base();
-    Base(Base const& other);
-    Base& operator=(Base const& other);
-    virtual ~Base();
+    char c1[8];
+    int  n;
+    char c2[8];
+};
+
+struct Data
+{
+    std::string s1;
+    int         n;
+    std::string s2;
 };
 
 #endif
