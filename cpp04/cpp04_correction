@@ -1,0 +1,146 @@
+ex00
+Comme d'habitude, il doit y avoir un main qui contient assez de tests pour prouver que le programme
+fonctionne comme demandé. Si il n'y a pas de main, ou que les tests ne sont pas assez précis,
+ou qu'une des classes n'est pas sous sa forme coplienne, ne notez pas cet exercice.
+
+> Tests approfondis
+Il y a des tests dans le main qui utilisent les classes dérivées autre que Peon,
+et tout fonctionne.
+
+> Donnez moi des moutons !
+La victime peut recevoir getPolymorphed() const, avec l'output correct.
+Le Sorcerer peut utiliser polymorph(Victim const &) const.
+
+> Enchainement de destructeurs
+Les destructeurs dans Victim et dérivés sont virtuels.
+
+> Sous classe facile
+Il y a une classe Peon qui hérite publiquement de Victim. Les outputs sont corrects.
+
+> Victim
+Il y a une classe Victim. Elle a un nom. Les outputs demandés
+à la construction et à la destruction sont présents.
+Les overloads d'opérateurs << vers ostream sont présents et fonctionnent
+correctement.
+
+> Sorcerer
+Il y a une classe Sorcerer. Elle a un nom et un titre. Elle a un constructeur avec un
+nom et un titre.
+La classe ne peut être instanciée sans paramètres.
+Ca signifie que soit le constructeur par défaut est privé ou non implémenté, afin de respecter
+la forme Coplienne.
+Les outputs requis à la construction et destruction sont présents.
+L'overload d'opérateur << est présent et fonctionnel.
+
+--------------------------------------------------------------------------------------------------------
+
+
+ex01
+Comme d'habitude, il doit y avoir un main qui contient assez de tests pour prouver que le programme
+fonctionne comme demandé. Si il n'y a pas de main, ou que les tests ne sont pas assez précis,
+ou qu'une des classes n'est pas sous sa forme coplienne, ne notez pas cet exercice.
+
+> Ennemis concrets
+Il y a des ennemis concrets - SuperMutant et RadScorpion (qui héritent d'Enemy, bien évidemment)
+Ils ont les attributs requis.
+La classe SuperMutant a l'overload requis de takeDamage() et il fonctionne correctement.
+
+> Character
+Il y a une classe Character. Elle a les attributs requis par le sujet :
+name, AP pointer to AWeapon.
+Le comportement requis pour AP est présent :
+40 au début, perte de X AP quand il attaque (basé sur l'arme) et recupère
+10 AP avec recoverAP (jusqu'à 40). attack() échoue si il n'y a pas assez
+d'AP.
+
+> Armes concrètes
+Il y a une classe PlasmaRifle et une classe PowerFist (qui héritent de
+AWeapon).
+Elles ont les attributs requis et attack() affiche la sortie demandée
+par le sujet.
+
+> Utilitaire et output
+Les fonctions equip() et attack() fonctionnent comme demandé. L'overload <<
+fonctionne comme demandé.
+
+> Chaine de destruction 2
+Les destructeurs dans AWeapon et ses dérivés sont virtuels.
+
+> Tests approfondis
+Il y a des tests dans le main avec plus d'armes dérivées et plus d'ennemis dérivés.
+
+> Chaine de destruction AGAIN
+Les destructeurs de Enemy et des ses dérivés sont virtuels.
+
+> Enemy
+Il y a une classe Enemy. Elle a les attributs requis par le sujet :
+type, HP.
+Les fonctions membres sont implémentées correctement.
+La vérification requise de takeDamage est présente et empêche d'aller
+en dessous de 0 HP.
+
+> Weapon
+Il y a une classe AWeapon. Elle est abstraite (attack() doit
+être une fonction virtuelle pure).
+Elle a les attributs demandés par le sujet : nom, dégats, cout d'AP.
+Ses fonctions membres sont implémentées de manière cohérente.
+
+--------------------------------------------------------------------------------------------------------
+
+
+ex02
+Comme d'habitude, il doit y avoir un main qui contient assez de tests pour prouver que le programme
+fonctionne comme demandé. Si il n'y a pas de main, ou que les tests ne sont pas assez précis,
+ou qu'une des classes n'est pas sous sa forme coplienne, ne notez pas cet exercice.
+
+> Interfaces
+Les interfaces ISquad et ISpaceMarine sont présentes et fonctionnent comme
+demandé dans le sujet.
+
+> Concrete squad
+La classe Squad est présemte et hérite de ISquad.
+Ses fonctions membres fonctionnent comme demandé.
+Le destructeur détruit les unités contenues.
+
+> Concrete units
+Les classes TacticalMarine et AssaultTerminator sont présentes et
+héritent de ISpaceMarine.
+Leur fonctions membres fonctionnent comme attendu
+
+> Assignment and copy
+Le comportement de la copie de l'assignation de la Squad sont comme demandé
+dans le sujet. Ca signifie "deep copy" et à l'assignation, les unitées existantes
+doivent être détruites avant d'être remplacées.
+
+--------------------------------------------------------------------------------------------------------
+
+
+ex03
+Comme d'habitude, il doit y avoir un main qui contient assez de tests pour prouver que le programme
+fonctionne comme demandé. Si il n'y a pas de main, ou que les tests ne sont pas assez précis,
+ou qu'une des classes n'est pas sous sa forme coplienne, ne notez pas cet exercice.
+
+> Interfaces
+Les interfaces ICharacter et IMateriaSource sont présentes et sont
+exactement comme demandé dans le sujet.
+
+> Source
+La classe MateriaSource est présente et implémente IMateriaSource. Les
+fonctions membres fonctionnent comme attendu.
+
+> Concrete materia
+Il y a une classe concrète Ice et Cure qui héritent de AMateria.
+Leur méthode clone() est implémentée correctement. Leur output est correct.
+
+> Caractère
+La classe Character est présente et implémente ICharacter. Elle a un
+inventaire de 4 materias.
+Les fonctions membres sont implémentées comme le sujet le requiert.
+
+> Materia base
+Il y a une classe AMateria. Elle a un type. C'est abstrait (le clone() est pur).
+Le système d'XP est implémenté comme demandé.
+
+> Assignation et copie
+La copie et l'assignation d'un Character sont implémentés comme demandé (=
+deep copy, +/- comme l'exercice précedent)

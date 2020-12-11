@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:45:54 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 08:30:21 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 12:08:56 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void Character::unequip(int idx)
 {
     if (idx < 0 || idx >= m_inventory_size)
         return;
-    delete m_inventory[idx];
     for (int i = idx; i < m_inventory_size - 1; i++)
         m_inventory[i] = m_inventory[i + 1];
     m_inventory_size--;

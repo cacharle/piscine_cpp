@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:50:54 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 13:00:49 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 10:26:58 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,26 @@ public:
     Peon(std::string const& name);
     Peon& operator=(Peon const& other);
     Peon(Peon const& other);
-    ~Peon();
+    virtual ~Peon();
 
     virtual void getPolymorphed() const;
 
 private:
     Peon();
+};
+
+class Rat : public Victim
+{
+public:
+    Rat(std::string const& name);
+    Rat& operator=(Rat const& other);
+    Rat(Rat const& other);
+    virtual ~Rat();
+
+    virtual void getPolymorphed() const;
+
+private:
+    Rat();
 };
 
 #endif

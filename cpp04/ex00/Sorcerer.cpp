@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:29:19 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 08:45:02 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 10:15:40 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ Sorcerer& Sorcerer::operator=(Sorcerer const& other)
     return *this;
 }
 
-Sorcerer::Sorcerer(Sorcerer const& other) { *this = other; }
+Sorcerer::Sorcerer(Sorcerer const& other)
+{
+    *this = other;
+    std::cout << m_name << ", " << m_title << ", is born!" << std::endl;
+}
 
 Sorcerer::~Sorcerer()
 {

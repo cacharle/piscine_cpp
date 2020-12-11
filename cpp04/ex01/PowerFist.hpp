@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 13:14:42 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 13:40:00 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 10:41:32 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     PowerFist();
     PowerFist(PowerFist const& other);
     PowerFist& operator=(PowerFist const& other);
-    ~PowerFist();
+    virtual ~PowerFist();
 
     virtual void attack() const;
 

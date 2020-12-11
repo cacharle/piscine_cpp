@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:58:01 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 08:33:22 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 12:08:44 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,12 +135,16 @@ int main()
         std::cout << "Name: " << c3.getName() << std::endl;
 
         std::cout << "################## EQUIP/USE" << std::endl;
-        c.equip(new Ice());
-        c.equip(new Cure());
+        AMateria *tmp0 = new Ice();
+        AMateria *tmp1 = new Cure();
+        AMateria *tmp2 = new Cure();
+        AMateria *tmp3 = new Ice();
+        c.equip(tmp0);
+        c.equip(tmp1);
         c.use(0, ch);
         c.use(1, ch);
-        c.equip(new Cure());
-        c.equip(new Ice());
+        c.equip(tmp2);
+        c.equip(tmp3);
         c.use(2, ch);
         c.use(3, ch);
         c.use(-1, ch);
@@ -165,6 +169,10 @@ int main()
         c.use(0, ch);
         c.equip(NULL);
         c.use(1, ch);
+        delete tmp0;
+        delete tmp1;
+        delete tmp2;
+        delete tmp3;
 
         std::cout << "################## DEEP COPY" << std::endl;
         c.equip(new Ice());
@@ -191,7 +199,6 @@ int main()
         ic->use(2, ch);
         ic->equip(new Ice());
         ic->use(3, ch);
-        ic->unequip(1);
         ic->use(1, ch);
         delete ic;
     }

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 15:50:35 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 09:32:46 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 11:30:48 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,7 @@ int main()
         std::cout << "================ SQUAD              =====================" << std::endl;
         Squad s;
         std::cout << "Count: " << s.getCount() << std::endl;
-        s.push(new TacticalMarine());
-        std::cout << "Count: " << s.getCount() << std::endl;
+        std::cout << "Count (push): " << s.push(new TacticalMarine()) << std::endl;
         s.push(new TacticalMarine());
         s.push(new AssaultTerminator());
         s.push(new AssaultTerminator());

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:42:22 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 12:59:36 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 10:15:55 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ Victim& Victim::operator=(Victim const& other)
     return *this;
 }
 
-Victim::Victim(Victim const& other) { *this = other; }
+Victim::Victim(Victim const& other)
+{
+    *this = other;
+    std::cout << "Some random victim called " << m_name
+              << " just appeared!" << std::endl;
+}
 
 Victim::~Victim()
 {

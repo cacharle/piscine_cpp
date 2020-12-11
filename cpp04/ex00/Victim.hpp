@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 20:40:50 by charles           #+#    #+#             */
-/*   Updated: 2020/11/12 12:57:01 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 10:26:56 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     Victim(std::string const& name);
     Victim& operator=(Victim const& other);
     Victim(Victim const& other);
-    ~Victim();
+    virtual ~Victim();
 
     std::string const& getName()  const;
     virtual void getPolymorphed() const;

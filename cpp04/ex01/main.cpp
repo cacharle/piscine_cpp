@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 09:05:58 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 09:16:14 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/11 11:02:36 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,6 +215,34 @@ int main()
         c.recoverAP();
         std::cout << c;
         c.attack(r);
+    }
+
+    std::cout << std::endl;
+
+    {
+        std::cout << "================ MORE DERIVED ====================" << std::endl;
+        Character c("YOP");
+        Enemy* r = new RadScorpion();
+        Enemy* s = new SuperMutant();
+        Enemy* n = new NotSoRadScorpion();
+        c.attack(r);
+        c.attack(s);
+        c.attack(n);
+        AWeapon *pr = new PlasmaRifle();
+        AWeapon *pf = new PowerFist();
+        AWeapon *npr = new ThisIsNotAPlasmaRifle();
+        c.equip(pr);
+        c.attack(n);
+        c.equip(pf);
+        c.attack(s);
+        c.equip(npr);
+        c.attack(r);
+        delete npr;
+        delete pf;
+        delete pr;
+        delete n;
+        delete s;
+        delete r;
     }
 
     return 0;
