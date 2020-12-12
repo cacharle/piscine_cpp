@@ -6,17 +6,18 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:08:13 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 13:37:49 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 12:15:30 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(Bureaucrat const& other) { *this = other; }
+Bureaucrat::Bureaucrat(Bureaucrat const& other)
+    : m_name(other.m_name) { *this = other; }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const& other)
 {
-    m_name  = other.m_name;
+    // m_name  = other.m_name;
     m_grade = other.m_grade;
     return *this;
 }
@@ -44,7 +45,7 @@ void Bureaucrat::decrementGrade()
     checkGrade();
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(Form& form) const
 {
     try
     {
@@ -53,11 +54,11 @@ void Bureaucrat::signForm(Form& form)
     }
     catch (std::exception &e)
     {
-        std::cout << m_name << " cannot sign " << form.getName() << " " << e.what() << std::endl;
+        std::cout << m_name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 
-void Bureaucrat::executeForm(Form& form)
+void Bureaucrat::executeForm(Form const& form) const
 {
     try
     {
@@ -66,7 +67,7 @@ void Bureaucrat::executeForm(Form& form)
     }
     catch (std::exception &e)
     {
-        std::cout << m_name << " cannot execute " << form.getName() << " " << e.what() << std::endl;
+        std::cout << m_name << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 

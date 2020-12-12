@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:13:05 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 17:50:20 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/12 12:16:43 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int main()
             Bureaucrat c4("foo", 1);   c4.executeForm(sh);
         }
         {
-            std::cout << "############### PRESIDENTIAL SIGN FORM" << std::endl;
+            std::cout << "############### PRESIDENTIAL EXECUTE FORM" << std::endl;
             PresidentialPardonForm pr("fu");
             pr.beSigned(Bureaucrat("foo", 1));
             Bureaucrat c1("foo", 150); c1.executeForm(pr);
@@ -125,7 +125,7 @@ int main()
             Bureaucrat c4("foo", 1);   c4.executeForm(pr);
         }
         {
-            std::cout << "############### ROBOTOMY SIGN FORM" << std::endl;
+            std::cout << "############### ROBOTOMY EXECUTE FORM" << std::endl;
             RobotomyRequestForm ro("mi");
             ro.beSigned(Bureaucrat("foo", 1));
             Bureaucrat c1("foo", 150); c1.executeForm(ro);

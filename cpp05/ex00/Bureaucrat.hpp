@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:04:32 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 10:28:41 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 11:34:29 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ private:
     Bureaucrat();
     void checkGrade();
 
-    std::string m_name;
-    int         m_grade;
+    std::string const m_name;
+    int               m_grade;
 
     class GradeTooHighException : public std::exception
     {

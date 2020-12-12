@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:13:05 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 12:10:38 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 11:56:20 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 
         Bureaucrat yep("YEP", 1);
         Bureaucrat yep2(yep);
-        Bureaucrat yep3("SHOULD NOT BE PRINTED", 42);
+        Bureaucrat yep3("SHOULD NOT BE OVERWRITTEN", 42);
         yep3 = yep;
         std::cout << yep;
         std::cout << yep2;
@@ -64,10 +64,10 @@ int main()
 
         Bureaucrat c("baraucrat", 10);
         std::cout << "############### SIGN FORM" << std::endl;
-        Form f4("foo", 150, 1); c.signForm(f4);
-        Form f3("foo", 10, 1);  c.signForm(f3);
-        Form f2("foo", 9, 1);   c.signForm(f2);
-        Form f1("foo", 1, 1);   c.signForm(f1);
+        Form f4("foo1", 150, 1); c.signForm(f4);
+        Form f3("foo2", 10, 1);  c.signForm(f3);
+        Form f2("foo3", 9, 1);   c.signForm(f2);
+        Form f1("foo4", 1, 1);   c.signForm(f1);
     }
 
     std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:04:32 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 13:36:56 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 12:19:51 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,15 @@ public:
     void               incrementGrade();
     void               decrementGrade();
 
-    void               signForm(Form& form);
-
-    void               executeForm(Form& form);
+    void               signForm(Form& form) const;
+    void               executeForm(Form const& form) const;
 
 private:
     Bureaucrat();
     void checkGrade();
 
-    std::string m_name;
-    int         m_grade;
+    std::string const m_name;
+    int               m_grade;
 
     class GradeTooHighException : public std::exception
     {

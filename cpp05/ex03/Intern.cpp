@@ -6,7 +6,7 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 13:41:09 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 18:08:56 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/12 12:32:15 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ Form *Intern::makeForm(std::string const& name, std::string const& target)
 {
     for (size_t i = 0; i < sizeof(Intern::makeFormDispatch) / sizeof(Intern::makeFormEntry); i++)
         if ((this->makeFormDispatch[i]).name == name)
-            return (this->*(makeFormDispatch[i].func))(target);
+        {
+            Form *form = (this->*(makeFormDispatch[i].func))(target);
+            std::cout << "Intern creates " << *form;
+            return form;
+        }
+    std::cout << "Intern cannot create form: " << name << " is not a known form name" << std::endl;
     return NULL;
 }

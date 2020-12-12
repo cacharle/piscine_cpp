@@ -6,17 +6,18 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:08:13 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 10:23:23 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 11:35:48 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(Bureaucrat const& other) { *this = other; }
+Bureaucrat::Bureaucrat(Bureaucrat const& other)
+    : m_name(other.m_name) { *this = other; }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const& other)
 {
-    m_name  = other.m_name;
+    // cannot copy other.m_name since it's constant
     m_grade = other.m_grade;
     return *this;
 }

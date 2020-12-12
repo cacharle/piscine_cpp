@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 18:13:05 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 11:51:33 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 11:41:15 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ int main()
 
     Bureaucrat yep("YEP", 1);
     Bureaucrat yep2(yep);
-    Bureaucrat yep3("SHOULD NOT BE PRINTED", 42);
+    Bureaucrat yep3("SHOULD NOT BE OVERWRITTEN", 42);
     yep3 = yep;
     std::cout << yep;
     std::cout << yep2;
     std::cout << yep3;
-
 
     std::cout << std::endl;
     std::cout << "############### DECREMENT" << std::endl;

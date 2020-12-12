@@ -6,7 +6,7 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:43:27 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 16:37:56 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/12 12:09:51 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ShrubberyCreationForm : public Form
 public:
     ShrubberyCreationForm(const ShrubberyCreationForm& other);
     ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
-    ~ShrubberyCreationForm();
+    virtual ~ShrubberyCreationForm();
 
     ShrubberyCreationForm(std::string const& target);
 

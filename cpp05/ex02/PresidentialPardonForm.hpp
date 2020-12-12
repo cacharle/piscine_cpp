@@ -6,7 +6,7 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:42:46 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 17:02:03 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/12 12:09:43 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PresidentialPardonForm : public Form
 public:
     PresidentialPardonForm(const PresidentialPardonForm& other);
     PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
-    ~PresidentialPardonForm();
+    virtual ~PresidentialPardonForm();
 
     PresidentialPardonForm(std::string const& target);
 

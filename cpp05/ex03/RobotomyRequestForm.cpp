@@ -6,7 +6,7 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:45:45 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 17:20:03 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/12 12:22:02 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::executeUnsafe() const
 {
+    std::cout << "DRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" << std::endl;
     if (rand() % 100 <= 50)
        std::cout << m_target << " has successfully been robotomized" << std::endl;
     else

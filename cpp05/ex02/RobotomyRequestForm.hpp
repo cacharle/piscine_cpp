@@ -6,7 +6,7 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:43:37 by cacharle          #+#    #+#             */
-/*   Updated: 2020/11/17 13:27:32 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 12:09:37 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class RobotomyRequestForm : public Form
 public:
     RobotomyRequestForm(const RobotomyRequestForm& other);
     RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
-    ~RobotomyRequestForm();
+    virtual ~RobotomyRequestForm();
 
     RobotomyRequestForm(std::string const& target);
 

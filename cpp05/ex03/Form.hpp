@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 19:19:45 by charles           #+#    #+#             */
-/*   Updated: 2020/11/17 17:09:15 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/12 12:20:25 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
 public:
     Form(Form const& other);
     Form& operator=(Form const& other);
-    ~Form();
+    virtual ~Form();
 
     Form(std::string const& name, int gradeSign, int gradeExecute);
 
@@ -34,7 +34,6 @@ public:
     int                getGradeExecute() const;
 
     void               beSigned(Bureaucrat const& b);
-
     void               execute(Bureaucrat const& executor) const;
 
 protected:
