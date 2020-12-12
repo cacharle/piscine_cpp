@@ -6,13 +6,14 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:43:37 by cacharle          #+#    #+#             */
-/*   Updated: 2020/12/12 12:20:48 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 12:46:52 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
+# include <cstdlib>
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form

@@ -6,13 +6,14 @@
 /*   By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 13:43:27 by cacharle          #+#    #+#             */
-/*   Updated: 2020/12/12 12:09:51 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/12 12:44:07 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
+# include <cerrno>
 # include <string>
 # include <cstring>
 # include <fstream>
