@@ -6,11 +6,11 @@
 #    By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/15 09:59:30 by charles           #+#    #+#              #
-#    Updated: 2020/04/16 10:53:22 by charles          ###   ########.fr        #
+#    Updated: 2020/12/13 16:00:15 by charles          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalar_conversion
+NAME = convert
 
 CXX = clang++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror

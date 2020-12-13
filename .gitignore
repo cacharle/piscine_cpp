@@ -9,6 +9,6 @@ a_few_functions
 iter
 array
 identify_real_type
-scalar_conversion
+convert
 serialization
 *_shrubbery

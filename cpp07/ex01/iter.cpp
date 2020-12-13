@@ -6,23 +6,24 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 20:02:19 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 20:12:17 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/11 15:45:09 by charles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 template<typename T>
-void iter(T* ptr, size_t len, void (*f)(T* x))
+void iter(T* ptr, size_t len, void (*f)(T const& x))
 {
     for (size_t i = 0; i < len; i++)
-        f(ptr + i);
+        f(ptr[i]);
 }
 
+/* sel-melc says const& */
 template<typename T>
-void timeTwo(T* x)
+void timeTwo(T const& x)
 {
-    *x *= 2;
+    x *= 2;
 }
 
 int main()
