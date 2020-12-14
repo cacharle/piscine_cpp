@@ -6,14 +6,14 @@
 #    By: charles <me@cacharle.xyz>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 09:31:16 by charles           #+#    #+#              #
-#    Updated: 2020/11/18 10:17:03 by charles          ###   ########.fr        #
+#    Updated: 2020/12/14 11:11:02 by cacharle         ###   ########.fr        #
 #                                                                              #
 # ############################################################################ #
 
 NAME = serialization
 
 CXX = clang++
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)

@@ -6,14 +6,14 @@
 #    By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/15 09:59:30 by charles           #+#    #+#              #
-#    Updated: 2020/12/13 16:00:15 by charles          ###   ########.fr        #
+#    Updated: 2020/12/14 10:53:21 by cacharle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 
 CXX = clang++
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)

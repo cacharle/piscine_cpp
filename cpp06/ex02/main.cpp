@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 10:00:18 by charles           #+#    #+#             */
-/*   Updated: 2020/11/18 09:29:49 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/14 11:17:03 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,10 @@ int main()
     for (int i = 0; i < 10; i++)
     {
         Base *b = generate();
-        std::cout << "---" << std::endl;
         identify_from_pointer(b);
         identify_from_reference(*b);
         delete b;
+        std::cout << "---" << std::endl;
     }
 
     return 0;

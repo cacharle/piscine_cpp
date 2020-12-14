@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/16 10:54:10 by charles           #+#    #+#             */
-/*   Updated: 2020/12/13 17:11:08 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/14 10:53:10 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ bool is_float(std::string input)
 {
     if (input[input.length() - 1] != 'f')
         return false;
+    if (input == "nanf" || input == "+inff" || input == "-inff")
+        return true;
     if (input.find('.') == std::string::npos)
         input.insert(input.length() - 1, ".0");
     return is_double(input.substr(0, input.length() - 1));
@@ -119,7 +121,6 @@ int main(int argc, char **argv)
         std::cerr << "Litteral `" << s << "` is not valid" << std::endl;
         return 1;
     }
-
 
     if (CHAR_MIN <= x && x <= CHAR_MAX && !std::isnan(x) && !std::isinf(x))
     {
