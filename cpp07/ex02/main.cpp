@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 20:25:44 by charles           #+#    #+#             */
-/*   Updated: 2020/04/14 20:41:40 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/14 15:29:50 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,8 @@ int main()
 {
     Array<int> a;
     std::cout << a.size() << std::endl;
-    try
-    {
-        std::cout << a[0] << std::endl;
-    }
-    catch (std::exception e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+    try                      { std::cout << a[0] << std::endl;     }
+    catch (std::exception e) { std::cout << e.what() << std::endl; }
     std::cout << "------------------------" << std::endl;
 
     Array<int> b(3);
@@ -34,14 +28,8 @@ int main()
     b[1] = 2;
     b[2] = 3;
     std::cout << b[0] << ", " << b[1] << ", " << b[2] << std::endl;
-    try
-    {
-        std::cout << b[3] << std::endl;
-    }
-    catch (std::exception e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+    try                      { std::cout << b[3] << std::endl;     }
+    catch (std::exception e) { std::cout << e.what() << std::endl; }
     std::cout << "------------------------" << std::endl;
 
     Array<float> c(3);
@@ -50,14 +38,8 @@ int main()
     c[1] = 2.2;
     c[2] = 3.1;
     std::cout << c[0] << ", " << c[1] << ", " << c[2] << std::endl;
-    try
-    {
-        std::cout << c[3] << std::endl;
-    }
-    catch (std::exception e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+    try                      { std::cout << c[3] << std::endl;     }
+    catch (std::exception e) { std::cout << e.what() << std::endl; }
     std::cout << "------------------------" << std::endl;
 
     Array<float> d(c);
@@ -76,6 +58,4 @@ int main()
     std::cout << f[0] << " <> " << c[0] << std::endl;
     std::cout << f[1] << " <> " << c[1] << std::endl;
     std::cout << f[2] << " <> " << c[2] << std::endl;
-
-    return 0;
 }

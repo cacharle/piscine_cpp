@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 20:02:19 by charles           #+#    #+#             */
-/*   Updated: 2020/12/11 15:45:09 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/14 15:16:32 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-template<typename T>
-void iter(T* ptr, size_t len, void (*f)(T const& x))
-{
-    for (size_t i = 0; i < len; i++)
-        f(ptr[i]);
-}
-
-/* sel-melc says const& */
-template<typename T>
-void timeTwo(T const& x)
-{
-    x *= 2;
-}
+#include "iter.hpp"
 
 int main()
 {
@@ -34,9 +21,7 @@ int main()
         std::cout << intArray[i] << ", ";
     std::cout << std::endl;
     iter(intArray, intArraySize, timeTwo<int>);
-    for (size_t i = 0; i < intArraySize; i++)
-        std::cout << intArray[i] << ", ";
-    std::cout << std::endl;
+
     std::cout << "--------------------------------------" << std::endl;
 
     float floatArray[] = {1.1, 2.2, 3.3, 4.3, 10.001, 20.9, 30.3, -1.2, -2.4};
@@ -45,9 +30,7 @@ int main()
         std::cout << floatArray[i] << ", ";
     std::cout << std::endl;
     iter(floatArray, floatArraySize, timeTwo<float>);
-    for (size_t i = 0; i < floatArraySize; i++)
-        std::cout << floatArray[i] << ", ";
-    std::cout << std::endl;
+
     std::cout << "--------------------------------------" << std::endl;
 
     unsigned int uintArray[] = {1, 2, 3, 4, 10, 20, 30, 100, 2000};
@@ -56,9 +39,6 @@ int main()
         std::cout << uintArray[i] << ", ";
     std::cout << std::endl;
     iter(uintArray, uintArraySize, timeTwo<unsigned int>);
-    for (size_t i = 0; i < uintArraySize; i++)
-        std::cout << uintArray[i] << ", ";
-    std::cout << std::endl;
 
     return 0;
 }

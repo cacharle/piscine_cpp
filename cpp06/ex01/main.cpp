@@ -6,7 +6,7 @@
 /*   By: charles <me@cacharle.xyz>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 09:32:02 by charles           #+#    #+#             */
-/*   Updated: 2020/12/14 11:14:11 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/14 11:29:41 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,5 @@ int main()
                   << std::endl;
         delete data;
     }
-
-    std::cout << "sizeof(Data) = " << sizeof(Data) << std::endl;
     return 0;
 }
