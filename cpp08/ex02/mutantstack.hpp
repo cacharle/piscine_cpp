@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 07:29:42 by charles           #+#    #+#             */
-/*   Updated: 2020/04/15 09:25:55 by charles          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:21:26 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,38 @@
 
 # include <stack>
 
-template<typename T>
+template <typename T>
 class MutantStack : public std::stack<T>
 {
 public:
-    MutantStack() : std::stack<T>()
-    {}
+    MutantStack() : std::stack<T>() {}
 
-    MutantStack(MutantStack const& other) : std::stack<T>(other)
-    {}
+    MutantStack(MutantStack const& other) : std::stack<T>(other) {}
 
-    void operator=(MutantStack const& other)
+    MutantStack& operator=(MutantStack const& other)
     {
         std::stack<T>::operator=(other);
+        return *this;
     }
 
-    ~MutantStack()
-    {}
+    ~MutantStack() {}
 
     class iterator
     {
     public:
         iterator(iterator const& other)
-            : m_parentStack(other.m_parentStack), m_pos(other.m_pos)
-        {}
+            : m_parentStack(other.m_parentStack), m_pos(other.m_pos) {}
 
         void operator=(iterator const& other)
         {
             m_parentStack = other.m_parentStack;
-            m_pos = other.m_pos;
+            m_pos         = other.m_pos;
         }
 
-        ~iterator()
-        {}
+        ~iterator() {}
 
         iterator(MutantStack<T>& parentStack, unsigned int n)
-            : m_parentStack(parentStack), m_pos(n)
-        {}
+            : m_parentStack(parentStack), m_pos(n) {}
 
         T& operator*()
         {
@@ -70,61 +65,26 @@ public:
             }
             return res;
         }
-        // T& operator->();
 
-        // pre increment;
-        iterator& operator++()
-        {
-            m_pos++;
-            return *this;
-        }
+        T* operator->() { return &(*(*this)); }
 
-        // post increment;
-        iterator& operator++(int)
-        {
-            m_pos++;
-            return *this;
-        }
+        iterator& operator++()    { m_pos++; return *this; }
+        iterator& operator++(int) { m_pos++; return *this; }
+        iterator& operator--()    { m_pos--; return *this; }
+        iterator& operator--(int) { m_pos--; return *this; }
 
-        iterator& operator--()
-        {
-            m_pos--;
-            return *this;
-        }
-
-        iterator& operator--(int)
-        {
-            m_pos--;
-            return *this;
-        }
-
-        bool operator==(iterator const& right)
-        {
-            return m_pos == right.m_pos;
-        }
-
-        bool operator!=(iterator const& right)
-        {
-            return !(*this == right);
-        }
+        bool operator==(iterator const& right) { return m_pos == right.m_pos; }
+        bool operator!=(iterator const& right) { return !(*this == right);    }
 
     private:
-        iterator() : m_pos(0)
-        {}
+        iterator() : m_pos(0) {}
 
         MutantStack<T>& m_parentStack;
-        int m_pos;
+        int             m_pos;
     };
 
-    iterator begin()
-    {
-        return iterator(*this, 0);
-    }
-
-    iterator end()
-    {
-        return iterator(*this, this->size());
-    }
+    iterator begin() { return iterator(*this, 0);            }
+    iterator end()   { return iterator(*this, this->size()); }
 };
 
 #endif
