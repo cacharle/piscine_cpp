@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 07:29:42 by charles           #+#    #+#             */
-/*   Updated: 2020/12/15 14:21:26 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/17 11:20:10 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,28 @@ public:
     {
     public:
         iterator(iterator const& other)
-            : m_parentStack(other.m_parentStack), m_pos(other.m_pos) {}
+            : m_parentStack(other.m_parentStack),
+              m_pos(other.m_pos),
+              m_dir(other.m_dir) {}
 
-        void operator=(iterator const& other)
+        iterator& operator=(iterator const& other)
         {
             m_parentStack = other.m_parentStack;
             m_pos         = other.m_pos;
+            m_dir         = other.m_dir;
+            return *this;
         }
 
         ~iterator() {}
 
-        iterator(MutantStack<T>& parentStack, unsigned int n)
-            : m_parentStack(parentStack), m_pos(n) {}
+        iterator(MutantStack<T>& parentStack, size_t n, size_t dir)
+            : m_parentStack(parentStack), m_pos(n), m_dir(dir) {}
 
         T& operator*()
         {
             std::stack<T> tmp;
 
-            for (unsigned int i = m_pos; i != 0; i--)
+            for (size_t i = 0; m_parentStack.size() != m_pos + 1; i++)
             {
                 tmp.push(m_parentStack.top());
                 m_parentStack.pop();
@@ -68,10 +72,10 @@ public:
 
         T* operator->() { return &(*(*this)); }
 
-        iterator& operator++()    { m_pos++; return *this; }
-        iterator& operator++(int) { m_pos++; return *this; }
-        iterator& operator--()    { m_pos--; return *this; }
-        iterator& operator--(int) { m_pos--; return *this; }
+        iterator& operator++()    { m_pos += m_dir; return *this; }
+        iterator  operator++(int) { iterator ret(*this); m_pos += m_dir; return ret; }
+        iterator& operator--()    { m_pos -= m_dir; return *this; }
+        iterator  operator--(int) { iterator ret(*this); m_pos -= m_dir; return ret; }
 
         bool operator==(iterator const& right) { return m_pos == right.m_pos; }
         bool operator!=(iterator const& right) { return !(*this == right);    }
@@ -80,11 +84,16 @@ public:
         iterator() : m_pos(0) {}
 
         MutantStack<T>& m_parentStack;
-        int             m_pos;
+        size_t          m_pos;
+        size_t          m_dir;
     };
 
-    iterator begin() { return iterator(*this, 0);            }
-    iterator end()   { return iterator(*this, this->size()); }
+    typedef iterator reverse_iterator;
+
+    iterator begin()  { return iterator(*this, 0, 1);                     }
+    iterator end()    { return iterator(*this, this->size(), 1);          }
+    iterator rbegin() { return reverse_iterator(*this, this->size() - 1, -1); }
+    iterator rend()   { return reverse_iterator(*this, -1, -1);               }
 };
 
 #endif
