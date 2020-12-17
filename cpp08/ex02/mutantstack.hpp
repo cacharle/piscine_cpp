@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 07:29:42 by charles           #+#    #+#             */
-/*   Updated: 2020/12/17 11:20:10 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/17 11:26:44 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MUTANTSTACK_HPP
 
 # include <stack>
+# include <cstddef>
 
 template <typename T>
 class MutantStack : public std::stack<T>
