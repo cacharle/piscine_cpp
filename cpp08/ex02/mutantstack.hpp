@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 07:29:42 by charles           #+#    #+#             */
-/*   Updated: 2020/12/17 11:26:44 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/17 14:06:59 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
         return *this;
     }
 
-    ~MutantStack() {}
+    virtual ~MutantStack() {}
 
     class iterator
     {

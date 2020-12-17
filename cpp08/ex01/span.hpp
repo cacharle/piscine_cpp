@@ -6,7 +6,7 @@
 /*   By: charles <charles.cabergs@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 06:55:07 by charles           #+#    #+#             */
-/*   Updated: 2020/12/15 12:22:31 by cacharle         ###   ########.fr       */
+/*   Updated: 2020/12/17 14:07:09 by cacharle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Span
 public:
     Span();
     Span(Span const& other);
-    void operator=(Span const& other);
+    Span& operator=(Span const& other);
     ~Span();
 
     Span(unsigned int n);
